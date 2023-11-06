@@ -1,0 +1,51 @@
+html {
+  height: 100%;
+  width: 100%;
+  background-color: darkgrey;
+}
+
+/* Webpage Header */
+header {
+  color: white;
+  padding: 3px;
+  border-bottom: 1px solid white;
+  background-color: grey;
+  text-align: center;
+  text-decoration: bold;
+}
+
+/* Buttons */
+button {
+  color: red;
+  background-color: rgb(50,50,50);
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px white solid;
+  padding: 8px;
+}
+
+button:hover {
+  background-color: rgb(240,240,240);
+  color: black;
+  cursor: pointer;
+}
+
+/* Generated images list */
+#generated-image {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  margin-right: 20px;
+  margin-top: 50px;
+  border: 2px black solid;
+}
+
+#generated-image:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: red;
+}
+
+#span-gen-images-list {
+  display: flex;
+}

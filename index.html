@@ -4,9 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hackathon</title>
+  <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-  <h1>Hello World</h1>
-  <h1>Hello World</h1>
+
+  <div id="main-image">
+    <image src="images\bird.png"></image>
+    <button id="modifyButton" onclick="showGenImages()">Modify & Print</button>
+  </div>
+
+  <div id="generated-images" hidden>
+    <span id="span-gen-images-list">
+      <div id="generated-image">
+        <h3>ASCII</h3>
+        <image src="images/bird.png" height="150" width="200"></image>
+      </div>
+      <div id="generated-image">
+        <h3>CARTOON</h3>
+        <image src="images/bird.png" height="150" width="200"></image>
+      </div>
+      <div id="generated-image">
+        <h3>BLACK & WHITE</h3>
+        <image src="images/bird.png" height="150" width="200"></image>
+      </div>
+      <div id="generated-image">
+        <h3>CUSTOM</h3>
+        <image src="images/bird.png" height="150" width="200"></image>
+      </div>
+    </span>
+    <button>Get T-Shirt!</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
