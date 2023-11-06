@@ -1,53 +1,41 @@
-//ai assistant system
-const recognition = new webkitSpeechRecognition();
-recognition.onresult = function(event) {
- const transcript = event.results[0][0].transcript;
- const command = transcript.toLowerCase();
- handleCommand(command);
+// Sample picture data with properties: views, category, popularity, and sales
+const pictureData = [
+    { views: 500, category: 'Nature', popularity: 4, sales: 10, image: 'image1.jpg' },
+    { views: 300, category: 'Abstract', popularity: 3, sales: 5, image: 'image2.jpg' },
+    { views: 800, category: 'Portraits', popularity: 5, sales: 20, image: 'image3.jpg' },
+    { views: 600, category: 'Nature', popularity: 4, sales: 15, image: 'image4.jpg' },
+    { views: 700, category: 'Abstract', popularity: 3, sales: 8, image: 'image5.jpg' }
+];
+// Function to filter and sort the picture data based on options
+function filterAndSortPictures(pictures, options) {
+    let filteredPictures = [...pictures];
+    if (options.category) {
+        filteredPictures = filteredPictures.filter(picture => picture.category === options.category);
+    }
+    if (options.popularity) {
+        filteredPictures = filteredPictures.filter(picture => picture.popularity >= options.popularity);
+    }
+    if (options.sales) {
+        filteredPictures = filteredPictures.filter(picture => picture.sales >= options.sales);
+    }
+    if (options.views) {
+        filteredPictures.sort((a, b) => b.views - a.views);
+    }
+    return filteredPictures;
+}
+// Define filter options
+const filterOptions = {
+    views: true,  // Sort by views (highest to lowest)
+    category: 'Nature',  // Filter by category
+    popularity: 4,  // Filter by popularity (4 and above)
+    sales: 10  // Filter by sales (10 and above)
 };
-function handleCommand(command) {
- if (command.includes("hello")) {
-   speak("Hello! How can I assist you?");
- } else if (command.includes("time")) {
-   const now = new Date();
-   const time = now.toLocaleTimeString();
-   speak(`The current time is ${time}`);
- } else if (command.includes("your_name")) {
-   speak("I am the AI Assistance");
- } else {
-   speak("Sorry, I didn't understand that command.");
- }
-}
-function speak(text) {
- const utterance = new SpeechSynthesisUtterance(text);
- speechSynthesis.speak(utterance);
-}
-recognition.start();
-
-
-//create a new trending array
-const existingPictures= []
-function createNewPictureArray(existiongArray){
-    const newArray = existingArray.map((url, index)=>{
-        return'new_image${index +1}.jpg';
-    });
-    return newArray;
-}
-const newPictures = createNewPictureArray(existingPictures);
-console.log(newPictures)
-//trending picture function
-const pictureData=[
-    {url:'1.jpg',likes:100, comments:50},
-    {url:'2.jpg',likes:900, comments:60}
-]
-
-function calsulateTrendingScore(picture)
-{
-    return picture.likes+ picture.comments;
-}
-function getTrendingPicture(pictures){
-    return pictures.sort((a,b)=>calculateTrendingScore(b)-calculateTrendingScore(a));
-}
-
-const trendingPictures = getTrendingPictures(pictureData);
-conslode.log(trendingPictures);
+// Apply the filter and sorting
+const filteredPictures = filterAndSortPictures(pictureData, filterOptions);
+// Display the filtered pictures
+const filteredPicturesContainer = document.getElementById('filtered-pictures');
+filteredPictures.forEach(picture => {
+    const pictureElement = document.createElement('div');
+    pictureElement.innerHTML = `<img src="${picture.image}" alt="${picture.category}">`;
+    filteredPicturesContainer.appendChild(pictureElement);
+});
