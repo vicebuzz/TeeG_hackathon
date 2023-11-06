@@ -1,6 +1,6 @@
-[
-    {
-      "image": "image1.jpg",
+{
+   "pictures":[ {
+      "image": "1.jpg",
       "likes": 100,
       "comments": 50,
       "category": "Nature",
@@ -8,7 +8,7 @@
       "sales": 10
     },
     {
-      "image": "image2.jpg",
+      "image": "2.jpg",
       "likes": 80,
       "comments": 30,
       "category": "Abstract",
@@ -38,5 +38,5 @@
       "category": "Abstract",
       "popularity": 3,
       "sales": 8
-    }
-   ]
+    }]
+}
