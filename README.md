@@ -4,7 +4,7 @@ Hackathon project for cooperation between Teemil and ClickASnap to generate pers
 ## Hackathon Project Idea: 
   * Trending image systems
   * AI Tee Generation 
-  * Image styles Generation
+  * Image styles Generation Project
 
 ## Resources
 
