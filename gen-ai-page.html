@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hackathon</title>
+  <title>View Image</title>
   <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 
   <div id="search-bar">
-    <label for="imageUrlInput" class="siteText">Enter your image url:</label><br>
+    <label for="imageUrlInput" class="siteText">Enter an image URL:</label><br>
     <input type="url" id="urlTextBox"></input>
     <button id="getImageButton" onclick="getImageUrl()">Confirm</button>
   </div>
 
   <div id="main-image-section">
-    <image id="main-image" src="images/bird.jpg"></image>
+    <image id="main-image" src="images/bird.jpg" height="300" width="400"></image>
     <br><label for="freePremUserSelect" class="siteText">Current User:</label>
     <select id="freePremUserSelect" onchange="changeUser(this)">
       <option class="free" value="0" id="selectedUser">FREE</option>
