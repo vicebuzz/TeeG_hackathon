@@ -29,6 +29,7 @@ const imageFourList = {
 };
 
 let selectedCustomGenerator;
+let indexToChangeTo = 1;
 
 //Function to get an image from an imputted image URL ()
 function getImageUrl() {
@@ -80,6 +81,7 @@ function getImageUrl() {
   bwImage.src = bwImageToDisplay;
   document.getElementById("generated-images-free").hidden = true;
   document.getElementById("generated-images-prem").hidden = true;
+  document.getElementById("custom-options").hidden = true;
   removeAllHighlighted();
 }
 
@@ -111,20 +113,38 @@ function changeCustomGenerator(e) {
 
 //Function to generate new random AI image
 function generateNewImage() {
+  let currentGenerator = selectedCustomGenerator;
   let currentImageNumber = document.getElementById("imageSelection").value;
   let imageDict;
   let imageList;
-  if (currentImageNumber == 1) {
-    imageDict = imageOneList;
-  } else if (currentImageNumber == 2) {
-    imageDict = imageTwoList;
-  } else if (currentImageNumber == 2) {
-    imageDict = imageTwoList;
-  } else if (currentImageNumber == 2) {
-    imageDict = imageTwoList;
+
+  //Get image type
+  if (currentGenerator == "ascii") {
+    imageList = "ascii";
+  } else if (currentGenerator == "cartoon") {
+    imageList = "cartoon";
+  } else if (currentGenerator == "black-and-white") {
+    imageList = "bw";
   }
-  let currentGenerator = selectedCustomGenerator;
-  console.log(currentGenerator, currentImageNumber);
+
+  //Get correct image dictionary
+  if (currentImageNumber == "Image 1") {
+    imageDict = imageOneList;
+  } else if (currentImageNumber == "Image 2") {
+    imageDict = imageTwoList;
+  } else if (currentImageNumber == "Image 3") {
+    imageDict = imageThreeList;
+  } else if (currentImageNumber == "Image 4") {
+    imageDict = imageFourList;
+  }
+  
+  let imageToChange = document.getElementById("custom-generated-image");
+  if ((indexToChangeTo == 2 && imageList == "bw") || indexToChangeTo == 3) {
+    indexToChangeTo = 0;
+  } 
+  imageToChange.src = imageDict[imageList][indexToChangeTo];
+  indexToChangeTo += 1;
+  console.log("generated new image");
 }
 
 //Function to show a list of generated images
