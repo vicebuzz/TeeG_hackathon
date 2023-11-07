@@ -28,7 +28,7 @@ const imageFourList = {
   bw : ["images/image_four/black_and_white/image-4-bw-1.png", "images/image_four/black_and_white/image-4-bw-2.png"]
 };
 
-console.log(imageThreeList["cartoon"][0]);
+let selectedCustomGenerator;
 
 //Function to get an image from an imputted image URL ()
 function getImageUrl() {
@@ -39,6 +39,7 @@ function getImageUrl() {
   let asciiImage = document.getElementById("ascii-image");
   let cartoonImage = document.getElementById("cartoon-image");
   let bwImage = document.getElementById("black-and-white-image");
+  let customGenImage = document.getElementById("custom-generated-image");
   let mainImageToDisplay;
   let asciiImageToDisplay;
   let cartoonImageToDisplay;
@@ -73,6 +74,7 @@ function getImageUrl() {
   mainImage.src = mainImageToDisplay;
   originalImage.src = mainImageToDisplay;
   customImage.src = mainImageToDisplay;
+  customGenImage.src = mainImageToDisplay;
   asciiImage.src = asciiImageToDisplay;
   cartoonImage.src = cartoonImageToDisplay;
   bwImage.src = bwImageToDisplay;
@@ -98,13 +100,31 @@ function changeUser(e) {
 
 //Function to change custom generator options
 function changeCustomGenerator(e) {
-  let selectedCustomGenerator = e.value;
+  selectedCustomGenerator = e.value;
   console.log("Custom generator selected option:", selectedCustomGenerator);
   if (selectedCustomGenerator == "custom") {
     document.getElementById("custom-text").hidden = false;
   } else {
     document.getElementById("custom-text").hidden = true;
   }
+}
+
+//Function to generate new random AI image
+function generateNewImage() {
+  let currentImageNumber = document.getElementById("imageSelection").value;
+  let imageDict;
+  let imageList;
+  if (currentImageNumber == 1) {
+    imageDict = imageOneList;
+  } else if (currentImageNumber == 2) {
+    imageDict = imageTwoList;
+  } else if (currentImageNumber == 2) {
+    imageDict = imageTwoList;
+  } else if (currentImageNumber == 2) {
+    imageDict = imageTwoList;
+  }
+  let currentGenerator = selectedCustomGenerator;
+  console.log(currentGenerator, currentImageNumber);
 }
 
 //Function to show a list of generated images
