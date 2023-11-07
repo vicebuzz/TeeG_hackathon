@@ -48,9 +48,14 @@
 <input type="color" id="foregroundColorInput" value="#000000"> Foreground Color
 <div id="qrcode"></div>
 <input type="file" id="imageInput" accept="image/*">
-<button id="applyBlackAndWhite">Apply Black & White Filter</button>
-<button id="applyCartoonEffect">Apply Cartoon Effect</button>
-<button id="applyPixelArt">Apply Pixel Art Effect</button>
+<select id="imageEffects">
+<option value="none">No Effect</option>
+<option value="blackAndWhite">Black & White</option>
+<option value="sepia">Sepia</option>
+<option value="cartoon">Cartoon</option>
+<option value="pixelation">Pixelation</option>
+</select>
+<button id="applyEffect">Apply Selected Effect</button>
 <canvas id="canvas" style="display: none;"></canvas>
 <img id="styledImage" alt="Styled Image">
 <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>

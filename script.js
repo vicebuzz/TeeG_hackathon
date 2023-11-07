@@ -130,13 +130,16 @@ document.getElementById('generateQRCode').addEventListener('click', function () 
     const newURL = newDomain + "/" + path;
     console.log(newURL);
   });
-  const imageInput = document.getElementById('imageInput');
-   const applyBlackAndWhite = document.getElementById('applyBlackAndWhite');
-   const applyCartoonEffect = document.getElementById('applyCartoonEffect');
-   const applyPixelArt = document.getElementById('applyPixelArt');
+         
+
+   //styling effects
+   const imageInput = document.getElementById('imageInput');
+   const imageEffects = document.getElementById('imageEffects');
+   const applyEffectButton = document.getElementById('applyEffect');
    const canvas = document.getElementById('canvas');
    const styledImage = document.getElementById('styledImage');
    const ctx = canvas.getContext('2d');
+   let originalImage;
    imageInput.addEventListener('change', function () {
      const file = imageInput.files[0];
      if (file) {
@@ -147,63 +150,109 @@ document.getElementById('generateQRCode').addEventListener('click', function () 
          img.onload = function () {
            canvas.width = img.width;
            canvas.height = img.height;
+           originalImage = img;
            ctx.drawImage(img, 0, 0, img.width, img.height);
          };
        };
        reader.readAsDataURL(file);
      }
    });
-   applyBlackAndWhite.addEventListener('click', function () {
-     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-     const data = imageData.data;
+   applyEffectButton.addEventListener('click', applySelectedEffect);
+   function applySelectedEffect() {
+     if (originalImage) {
+       const selectedEffect = imageEffects.value;
+       ctx.drawImage(originalImage, 0, 0, originalImage.width, originalImage.height);
+       const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+       applyEffect(imageData.data, selectedEffect);
+       ctx.putImageData(imageData, 0, 0);
+       styledImage.src = canvas.toDataURL('image/jpeg');
+     }
+   }
+   function applyEffect(data, effect) {
+     switch (effect) {
+       case 'none':
+         // No effect
+         break;
+       case 'blackAndWhite':
+         blackAndWhiteEffect(data);
+         break;
+       case 'sepia':
+         sepiaEffect(data);
+         break;
+       case 'cartoon':
+         cartoonEffect(data);
+         break;
+       case 'pixelation':
+         pixelationEffect(data);
+         break;
+       default:
+         // No effect by default
+         break;
+     }
+   }
+   function blackAndWhiteEffect(data) {
+     // Black and white effect code
      for (let i = 0; i < data.length; i += 4) {
        const gray = (data[i] + data[i + 1] + data[i + 2]) / 3;
        data[i] = gray;
        data[i + 1] = gray;
        data[i + 2] = gray;
      }
-     ctx.putImageData(imageData, 0, 0);
-     styledImage.src = canvas.toDataURL('image/jpeg');
-   });
-   applyCartoonEffect.addEventListener('click', function () {
-     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-     const data = imageData.data;
+   }
+   function sepiaEffect(data) {
+     // Sepia effect code
      for (let i = 0; i < data.length; i += 4) {
        const r = data[i];
        const g = data[i + 1];
        const b = data[i + 2];
-       // Apply cartoon effect by reducing color levels
-       const level = (r + g + b) / 3;
-       data[i] = data[i + 1] = data[i + 2] = level;
+       data[i] = (r * 0.393) + (g * 0.769) + (b * 0.189);
+       data[i + 1] = (r * 0.349) + (g * 0.686) + (b * 0.168);
+       data[i + 2] = (r * 0.272) + (g * 0.534) + (b * 0.131);
      }
-     ctx.putImageData(imageData, 0, 0);
-     styledImage.src = canvas.toDataURL('image/jpeg');
-   });
-   applyPixelArt.addEventListener('click', function () {
-     const pixelSize = 10; // Adjust the pixel size as needed
-     for (let y = 0; y < canvas.height; y += pixelSize) {
-       for (let x = 0; x < canvas.width; x += pixelSize) {
-         const imageData = ctx.getImageData(x, y, pixelSize, pixelSize);
-         const data = imageData.data;
-         let totalR = 0;
-         let totalG = 0;
-         let totalB = 0;
-         for (let i = 0; i < data.length; i += 4) {
-           totalR += data[i];
-           totalG += data[i + 1];
-           totalB += data[i + 2];
-         }
-         const averageR = totalR / (pixelSize * pixelSize);
-         const averageG = totalG / (pixelSize * pixelSize);
-         const averageB = totalB / (pixelSize * pixelSize);
-         for (let i = 0; i < data.length; i += 4) {
-           data[i] = averageR;
-           data[i + 1] = averageG;
-           data[i + 2] = averageB;
-         }
-         ctx.putImageData(imageData, x, y);
+   }
+   function cartoonEffect(data) {
+    const width = canvas.width;
+    const height = canvas.height;
+    const threshold = 50;
+    for (let i = 0; i < data.length; i += 4) {
+      const r = data[i];
+      const g = data[i + 1];
+      const b = data[i + 2];
+      // Convert to grayscale
+      const gray = (r + g + b) / 3;
+      // Apply edge detection
+      const newValue = gray < threshold ? 0 : 255;
+      data[i] = data[i + 1] = data[i + 2] = newValue;
+    }
+   }
+   function pixelationEffect(data) {
+    const pixelSize = 10; // Adjust the pixel size as needed
+    const width = canvas.width;
+ const height = canvas.height;
+ for (let y = 0; y < height; y += pixelSize) {
+   for (let x = 0; x < width; x += pixelSize) {
+     let totalR = 0;
+     let totalG = 0;
+     let totalB = 0;
+     for (let i = y; i < y + pixelSize && i < height; i++) {
+       for (let j = x; j < x + pixelSize && j < width; j++) {
+         const index = (i * width + j) * 4;
+         totalR += data[index];
+         totalG += data[index + 1];
+         totalB += data[index + 2];
        }
      }
-     styledImage.src = canvas.toDataURL('image/jpeg');
-   })
-         
+     const pixelAvgR = totalR / (pixelSize * pixelSize);
+     const pixelAvgG = totalG / (pixelSize * pixelSize);
+     const pixelAvgB = totalB / (pixelSize * pixelSize);
+     for (let i = y; i < y + pixelSize && i < height; i++) {
+       for (let j = x; j < x + pixelSize && j < width; j++) {
+         const index = (i * width + j) * 4;
+         data[index] = pixelAvgR;
+         data[index + 1] = pixelAvgG;
+         data[index + 2] = pixelAvgB;
+       }
+     }
+   }
+ }
+   }
