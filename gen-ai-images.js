@@ -11,16 +11,27 @@ function getImageUrl() {
 //Function to change selected user
 function changeUser(e) {
   let selectedUserValue = e.value;
-  const selectMenu = document.getElementById("freePremUserSelect");
-  const options = selectMenu.options;
+  const userSelectMenu = document.getElementById("freePremUserSelect");
+  const userOptions = userSelectMenu.options;
   if (selectedUserValue == 0) {
-    options[0].id = "selectedUser";
-    options[1].id = "";
+    userOptions[0].id = "selectedUser";
+    userOptions[1].id = "";
   } else {
-    options[1].id = "selectedUser";
-    options[0].id = "";
+    userOptions[1].id = "selectedUser";
+    userOptions[0].id = "";
   }
   console.log("User changed to:", document.getElementById("selectedUser").innerHTML);
+}
+
+//Function to change custom generator options
+function changeCustomGenerator(e) {
+  let selectedCustomGenerator = e.value;
+  console.log("Custom generator selected option:", selectedCustomGenerator);
+  if (selectedCustomGenerator == "custom") {
+    document.getElementById("custom-text").hidden = false;
+  } else {
+    document.getElementById("custom-text").hidden = true;
+  }
 }
 
 //Function to show a list of generated images
@@ -54,18 +65,15 @@ function selectGenImage(e) {
   e.classList.add('highlighted');
   console.log("Item highlighted");
   if (document.getElementById("generated-image-4").classList.contains('highlighted')) {
-    console.log("Custom selected");
-    //Unhide custom parameters
+    document.getElementById("custom-options").hidden = false;
   } else {
-    //Hide custom parameters
+    document.getElementById("custom-options").hidden = true;
   }
 }
 
 //Function that will be used to call Teemill API and send selected image to t-shirt preview and grab that to send back
 function sendImageToAPI() {
-  let imageURL = 'images/bird.png'; //This will be changed later to grab whatever URL link has been used
-  let tee = document.getElementById("generated-image-selected");
-  console.log("Sending t-shirt: ");
+  //TBD
 }
 
 

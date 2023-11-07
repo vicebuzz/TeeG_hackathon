@@ -52,7 +52,32 @@
       </div>
     </span>
   </div>
-  <br><button onclick="sendImageToAPI()">Get T-Shirt!</button>
+
+  <div id="custom-options" hidden>
+    <div class="custom-container">
+      <h3 class="siteText">CUSTOM SECTION</h3>
+      <label id="choose-ai" class="siteTextTwo">Choose AI:</label>
+      <select id="choose-ai-select" onchange="changeCustomGenerator(this)">
+        <option id="default" value="default" hidden>PLEASE SELECT</option>
+        <option id="ascii" value="ascii">ASCII</option>
+        <option id="cartoon" value="cartoon">CARTOON</option>
+        <option id="black-and-white" value="black-and-white">BLACK & WHITE</option>
+        <option id="custom" value="custom">CUSTOM</option>
+      </select>
+      <div id="custom-text" hidden>
+        <br><label class="siteTextTwo">Custom Input:</label>
+        <input type="text" id="custom-text-input"></input>
+      </div>
+      <div id="placeholder-image">
+        <image src="images/bird.jpg" height="300" width="400"></image>
+      </div>
+      <br><button id="regenButton">REGENERATE IMAGE</button>
+    </div>
+  </div>
+
+  <br><button id="get-t-shirt-button" onclick="sendImageToAPI()">Get T-Shirt!</button>
+
+  <button id="test" onclick="convertImageToAscii()">TEST CONVERSION ASCII</button>
 
   <script src="gen-ai-images.js"></script>
 </body>

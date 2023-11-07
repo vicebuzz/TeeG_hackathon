@@ -38,10 +38,19 @@ button#getImageButton {
   margin-left: 5px;
 }
 
+button#get-t-shirt-button {
+  margin-bottom: 100px;
+}
+
 /* Top URL search bar */
 .siteText {
   font-weight: bold;
   font-size: 30px;
+}
+
+.siteTextTwo {
+  font-weight: bold;
+  font-size: 20px;
 }
 
 #urlTextBox {
@@ -76,4 +85,21 @@ button#getImageButton {
 .highlighted {
   background-color: yellow;
   scale: 1.05;
+}
+
+/* Custom configuration area */
+.custom-container {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  display: inline-block;
+  border: 2px solid black;
+}
+
+#placeholder-image {
+margin-top: 20px;
+}
+
+input#custom-text-input {
+  height: 20px;
 }
