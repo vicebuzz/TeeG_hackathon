@@ -226,7 +226,7 @@ document.getElementById('generateQRCode').addEventListener('click', function () 
     }
    }
    function pixelationEffect(data) {
-    const pixelSize = 10; // Adjust the pixel size as needed
+    const pixelSize = 10; 
     const width = canvas.width;
  const height = canvas.height;
  for (let y = 0; y < height; y += pixelSize) {
@@ -255,4 +255,4 @@ document.getElementById('generateQRCode').addEventListener('click', function () 
      }
    }
  }
-   }
+}
