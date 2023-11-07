@@ -4,7 +4,7 @@ body {
 }
 
 * {
-  /*border: 1px solid red;*/  
+  /*border: 1px solid red;*/
 }
 
 main {
@@ -17,6 +17,7 @@ main .top-info {
   flex-direction: column;
   flex-wrap: wrap;
   border-bottom: 1px solid gray; 
+  margin-bottom: 0  px; 
 }
 
 main .top-info .user-info {
@@ -67,4 +68,29 @@ main .top-info .more-options {
 main .top-info .more-options p {
   font-weight: bold; 
   font-size: 1.25em; 
+}
+
+main .image-section {
+
+}
+
+main .image-section .return-button {
+  display: flex; 
+  align-items: center; 
+  min-height: 50px; 
+}
+
+main .image-section .return-button .img-arrow {
+  width: 20px;
+  height: 20px; 
+  /*border: 1px solid red; */
+  background-image: url('./backbutton.png');
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: cover; 
+}
+
+main .image-section .return-button .text:hover {
+  text-decoration: underline; 
+  color: purple; 
 }
