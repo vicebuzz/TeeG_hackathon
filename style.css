@@ -31,6 +31,26 @@ button:hover {
   cursor: pointer;
 }
 
+button#getImageButton {
+  display: inline;
+  height: 25px;
+  padding-bottom: 20px;
+  margin-left: 5px;
+}
+
+/* Top URL search bar */
+.siteText {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+#urlTextBox {
+  height: 25px;
+  width: 600px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
 /* Generated images list */
 .generated-image {
   display: inline-block;
@@ -38,7 +58,7 @@ button:hover {
   padding-right: 20px;
   padding-bottom: 10px;
   margin-right: 20px;
-  margin-top: 50px;
+  margin-top: 20px;
   margin-bottom: 20px;
   border: 2px black solid;
 }
@@ -55,4 +75,5 @@ button:hover {
 
 .highlighted {
   background-color: yellow;
+  scale: 1.05;
 }

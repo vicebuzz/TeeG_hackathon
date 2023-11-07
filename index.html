@@ -8,9 +8,15 @@
 </head>
 <body>
 
-  <div id="main-image">
-    <image src="images/bird.png"></image>
-    <br><label for="freePremUserSelect">Current User:</label>
+  <div id="search-bar">
+    <label for="imageUrlInput" class="siteText">Enter your image url:</label><br>
+    <input type="url" id="urlTextBox"></input>
+    <button id="getImageButton" onclick="getImageUrl()">Confirm</button>
+  </div>
+
+  <div id="main-image-section">
+    <image id="main-image" src="images/bird.jpg"></image>
+    <br><label for="freePremUserSelect" class="siteText">Current User:</label>
     <select id="freePremUserSelect" onchange="changeUser(this)">
       <option class="free" value="0" id="selectedUser">FREE</option>
       <option class="prem" value="1">PREMIUM</option>
@@ -21,29 +27,33 @@
   <div id="generated-images">
     <span id="span-gen-images-list"></span>
       <div id="generated-images-free" hidden>
+        <div class="generated-image" id="generated-image-0" onclick="selectGenImage(this)">
+          <h3>ORIGINAL</h3>
+          <image src="images/bird.jpg" height="150" width="200"></image>
+        </div>
         <div class="generated-image" id="generated-image-1" onclick="selectGenImage(this)">
           <h3>ASCII</h3>
-          <image src="images/bird.png" height="150" width="200"></image>
+          <image src="images/bird-ascii-art.png" height="150" width="200"></image>
         </div>
         <div class="generated-image" id="generated-image-2" onclick="selectGenImage(this)">
           <h3>CARTOON</h3>
-          <image src="images/bird.png" height="150" width="200"></image>
+          <image src="images/bird-cartoon.png" height="150" width="200"></image>
         </div>
         <div class="generated-image" id="generated-image-3" onclick="selectGenImage(this)">
           <h3>BLACK & WHITE</h3>
-          <image src="images/bird.png" height="150" width="200"></image>
+          <image src="images/bird-black-and-white.png" height="150" width="200"></image>
         </div>
       </div>
       <div id="generated-images-prem" hidden>
         <div class="generated-image" id="generated-image-4" onclick="selectGenImage(this)">
           <h3>CUSTOM</h3>
-          <image src="images/bird.png" height="150" width="200"></image>
+          <image src="images/bird.jpg" height="150" width="200"></image>
         </div>
       </div>
     </span>
   </div>
   <br><button onclick="sendImageToAPI()">Get T-Shirt!</button>
 
-  <script src="script.js"></script>
+  <script src="gen-ai-images.js"></script>
 </body>
 </html>

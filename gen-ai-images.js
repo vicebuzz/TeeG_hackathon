@@ -1,3 +1,13 @@
+//Function to get an image from an inputted image URL
+function getImageUrl() {
+  let inputtedImageUrl = document.getElementById("urlTextBox").value;
+  let displayedImage = document.getElementById("main-image");
+  displayedImage.src = inputtedImageUrl;
+  displayedImage.width = 400;
+  displayedImage.height = 400;
+  console.log(inputtedImageUrl); 
+}
+
 //Function to change selected user
 function changeUser(e) {
   let selectedUserValue = e.value;
@@ -43,6 +53,12 @@ function selectGenImage(e) {
   // Add the 'highlighted' class to the selected element
   e.classList.add('highlighted');
   console.log("Item highlighted");
+  if (document.getElementById("generated-image-4").classList.contains('highlighted')) {
+    console.log("Custom selected");
+    //Unhide custom parameters
+  } else {
+    //Hide custom parameters
+  }
 }
 
 //Function that will be used to call Teemill API and send selected image to t-shirt preview and grab that to send back
