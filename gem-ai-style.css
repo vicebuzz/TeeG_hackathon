@@ -1,0 +1,109 @@
+html {
+  height: 100%;
+  width: 100%;
+  background-color: darkgrey;
+  text-align: center;
+}
+
+/* Webpage Header */
+header {
+  color: white;
+  padding: 3px;
+  border-bottom: 1px solid white;
+  background-color: grey;
+  text-align: center;
+  text-decoration: bold;
+}
+
+/* Buttons */
+button, select {
+  color: red;
+  background-color: rgb(50,50,50);
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px white solid;
+  padding: 8px;
+}
+
+button:hover {
+  background-color: rgb(240,240,240);
+  color: black;
+  cursor: pointer;
+}
+
+button#getImageButton {
+  display: inline;
+  height: 25px;
+  padding-bottom: 20px;
+  margin-left: 5px;
+}
+
+button#get-t-shirt-button {
+  margin-bottom: 100px;
+}
+
+/* Top URL search bar */
+.siteText {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.siteTextTwo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#urlTextBox {
+  height: 25px;
+  width: 600px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+/* Generated images list */
+.generated-image {
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 2px black solid;
+}
+
+.generated-image:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: red;
+}
+
+#generated-images {
+  display: inline-flex;
+}
+
+.highlighted {
+  background-color: yellow;
+  scale: 1.05;
+}
+
+/* Custom configuration area */
+.custom-container {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  display: inline-block;
+  border: 2px solid black;
+}
+
+#placeholder-image {
+margin-top: 20px;
+}
+
+input#custom-text-input {
+  height: 20px;
+}
+
+select#imageSelection {
+  margin-bottom: 20px;
+}
