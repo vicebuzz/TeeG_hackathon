@@ -49,6 +49,10 @@ main .top-info .user-info .profile-img {
   display: inline-block; 
 }
 
+main .top-info .user-info .profile-img:hover {
+  cursor: pointer;
+}
+
 main .top-info .user-info .username {
   /*border: 1px solid blue; */ 
   display: flex; 
@@ -58,6 +62,11 @@ main .top-info .user-info .username {
 
 main .top-info .user-info .username p {
   color: black;
+}
+
+main .top-info .user-info .username p:hover {
+  cursor: pointer; 
+  text-decoration: underline; 
 }
 
 main .top-info .more-options {
@@ -93,4 +102,52 @@ main .image-section .return-button .img-arrow {
 main .image-section .return-button .text:hover {
   text-decoration: underline; 
   color: purple; 
+  cursor: pointer;
+}
+
+main .image-section .showcase-image {
+  /*border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+}
+
+main .image-section .showcase-image .scroll-button-left {
+  /*border: 1px solid blue; */
+  min-width: 10%;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+main .image-section .showcase-image .scroll-button-left img {
+  max-height: 60px; 
+  max-width: 60px;
+}
+
+main .image-section .showcase-image .scroll-button-right {
+  /*border: 1px solid blue; */
+  min-width: 10%; 
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+}
+
+main .image-section .showcase-image .scroll-button-right img {
+  max-width: 60px; 
+  max-height: 60px; 
+}
+
+main .image-section .showcase-image .main-image {
+  /*border: 1px solid blue; */
+  width: 100%; 
+  flex-grow: 2;
+  max-height: 600px; 
+  overflow: hidden;
+  display: flex;
+}
+
+main .image-section .showcase-image .main-image  img {
+  width: 100%; 
+  height: 100%;
+  object-fit: contain; 
 }
