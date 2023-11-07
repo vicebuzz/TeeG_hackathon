@@ -1,0 +1,24 @@
+ul{
+list-style-type: none;
+padding:0;
+margin: 0;
+}
+li{
+display: inline;
+}
+.navoptionright_text{
+    float: right;
+}
+.navoptionright_img{
+    float: right;
+    width: 25px;
+    height: 25px;
+}
+.icons{
+height: auto;
+max-width: 100%;
+}
+a{
+    padding: 20px;
+
+}
