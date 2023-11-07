@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+   }
+   table {
+    border-collapse: collapse;
+    width: 400px; /* Set the desired width for the table */
+   }
+   table, th, td {
+    border: 1px solid black;
+   }
+   th, td {
+    padding: 10px;
+    text-align: left;
+   }
+   
