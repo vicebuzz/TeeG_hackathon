@@ -3,20 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="styles.css">
 <title>Hackathon</title>
 </head>
 <body>
-<select id="sort">
-    <option value="likes">Likes</option>
-    <option value="comments">Comments</option>
-    <option value="sales">Sales</option>
-    <option value="popularity">Popularity</option>
-    </select>
-</select>
 <table>
-  
+<tr>
+<th>Image</th>
+<th>Likes</th>
+<th>Comments</th>
+<th>Sales</th>
+<th>Popularity</th>
+<th>Date</th>
+</tr>
 </table>
-<script src="/script.js"></script>
+<select id="sort">
+<option value="likes">Likes</option>
+<option value="comments">Comments</option>
+<option value="sales">Sales</option>
+<option value="popularity">Popularity</option>
+<option value="date">Date</option>
+</select>
+<select id="dateSort">
+<option value="default">Default</option>
+<option value="week">Week</option>
+<option value="month">Month</option>
+<option value="year">Year</option>
+</select>
+<script src="script.js"></script>
 </body>
 </html>
