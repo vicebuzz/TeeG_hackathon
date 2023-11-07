@@ -170,12 +170,22 @@ imageInput.addEventListener('change', () => {
 //qr code generate
 document.getElementById('generateQRCode').addEventListener('click', function () {
     const link = document.getElementById('linkInput').value;
+    const backgroundColor = document.getElementById('backgroundColorInput').value;
+     const foregroundColor = document.getElementById('foregroundColorInput').value;
     if (link) {
       const qrcode = new QRCode(document.getElementById('qrcode'), {
         text: link,
         width: 128,
         height: 128,
+        colorDark: foregroundColor,
+         colorLight: backgroundColor,
       });
     }
+    const newDomain = "https://d1unuvan7ts7ur.cloudfront.net/";
+    const parts = link.split("/");
+    const path = parts.slice(5).join("/");
+    const newURL = newDomain + "/" + path;
+    console.log(newURL);
   });
+
          
