@@ -9,13 +9,17 @@
 <body>
 
   <div id="search-bar">
-    <label for="imageUrlInput" class="siteText">Enter an image URL:</label><br>
-    <input type="url" id="urlTextBox"></input>
-    <button id="getImageButton" onclick="getImageUrl()">Confirm</button>
+    <label for="imageUrlInput" class="siteText">User selects an image on ClickASnap:</label><br>
+    <select id="imageSelection" onchange="getImageUrl()">
+      <option>Image 1</option>
+      <option>Image 2</option>
+      <option>Image 3</option>
+      <option>Image 4</option>
+    </select>
   </div>
 
   <div id="main-image-section">
-    <image id="main-image" src="images/bird.jpg" height="300" width="400"></image>
+    <image id="main-image" src="images/image_one/oscar-image-1-original.png" height="400" width="400"></image>
     <br><label for="freePremUserSelect" class="siteText">Current User:</label>
     <select id="freePremUserSelect" onchange="changeUser(this)">
       <option class="free" value="0" id="selectedUser">FREE</option>
@@ -29,25 +33,25 @@
       <div id="generated-images-free" hidden>
         <div class="generated-image" id="generated-image-0" onclick="selectGenImage(this)">
           <h3>ORIGINAL</h3>
-          <image src="images/bird.jpg" height="150" width="200"></image>
+          <image src="" height="150" width="200"></image>
         </div>
         <div class="generated-image" id="generated-image-1" onclick="selectGenImage(this)">
           <h3>ASCII</h3>
-          <image src="images/bird-ascii-art.png" height="150" width="200"></image>
+          <image src="" height="150" width="200"></image>
         </div>
         <div class="generated-image" id="generated-image-2" onclick="selectGenImage(this)">
           <h3>CARTOON</h3>
-          <image src="images/bird-cartoon.png" height="150" width="200"></image>
+          <image src="" height="150" width="200"></image>
         </div>
         <div class="generated-image" id="generated-image-3" onclick="selectGenImage(this)">
           <h3>BLACK & WHITE</h3>
-          <image src="images/bird-black-and-white.png" height="150" width="200"></image>
+          <image src="" height="150" width="200"></image>
         </div>
       </div>
       <div id="generated-images-prem" hidden>
         <div class="generated-image" id="generated-image-4" onclick="selectGenImage(this)">
           <h3>CUSTOM</h3>
-          <image src="images/bird.jpg" height="150" width="200"></image>
+          <image src="" height="150" width="200"></image>
         </div>
       </div>
     </span>
@@ -69,13 +73,15 @@
         <input type="text" id="custom-text-input"></input>
       </div>
       <div id="placeholder-image">
-        <image src="images/bird.jpg" height="300" width="400"></image>
+        <image src="" height="300" width="400"></image>
       </div>
       <br><button id="regenButton">REGENERATE IMAGE</button>
     </div>
   </div>
 
   <br><button id="get-t-shirt-button" onclick="sendImageToAPI()">Get T-Shirt!</button>
+
+  <div id="qrcode"></div>
 
   <script src="gen-ai-images.js"></script>
 </body>

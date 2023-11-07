@@ -103,3 +103,7 @@ margin-top: 20px;
 input#custom-text-input {
   height: 20px;
 }
+
+select#imageSelection {
+  margin-bottom: 20px;
+}

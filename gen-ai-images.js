@@ -1,11 +1,28 @@
 //Function to get an image from an inputted image URL
 function getImageUrl() {
-  let inputtedImageUrl = document.getElementById("urlTextBox").value;
+  let inputtedImageUrl = document.getElementById("imageSelection").value;
   let displayedImage = document.getElementById("main-image");
-  displayedImage.src = inputtedImageUrl;
+  let imageToDisplay;
+  switch (inputtedImageUrl) {
+    case "Image 1":
+      imageToDisplay = "images/image_one/oscar-image-1-original.png";
+      break;
+    case "Image 2":
+      imageToDisplay = "images/image_two/oscar-image-2-original.png";
+      break;
+    case "Image 3":
+      imageToDisplay = "images/image_three/oscar-image-3-original.png";
+      break;
+    case "Image 4":
+      imageToDisplay = "images/image_four/oscar-image-4-original.png";
+      break;
+  }
+  displayedImage.src = imageToDisplay;
   displayedImage.width = 400;
   displayedImage.height = 400;
-  console.log(inputtedImageUrl); 
+  document.getElementById("generated-images-free").hidden = true;
+  document.getElementById("generated-images-prem").hidden = true;
+  removeAllHighlighted();
 }
 
 //Function to change selected user
