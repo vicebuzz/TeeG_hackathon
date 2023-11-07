@@ -51,7 +51,7 @@
       <div id="generated-images-prem" hidden>
         <div class="generated-image" id="generated-image-4" onclick="selectGenImage(this)">
           <h3>CUSTOM</h3>
-          <image src="images/image_one/oscar-image-1-original.png" height="150" width="200" class="custom-image"></image>
+          <image src="images/image_one/oscar-image-1-original.png" height="150" width="200" id="custom-image"></image>
         </div>
       </div>
     </span>
@@ -73,9 +73,9 @@
         <input type="text" id="custom-text-input"></input>
       </div>
       <div id="placeholder-image">
-        <image src="" height="300" width="400"></image>
+        <image src="images/image_one/oscar-image-1-original.png" height="300" width="400" id="custom-generated-image"></image>
       </div>
-      <br><button id="regenButton">REGENERATE IMAGE</button>
+      <br><button id="regenButton" onclick="generateNewImage()">REGENERATE IMAGE</button>
     </div>
   </div>
 
