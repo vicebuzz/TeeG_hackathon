@@ -42,19 +42,17 @@
 <option value="month">Month</option>
 <option value="year">Year</option>
 </select>
-<input type="file" id="imageInput" accept="image/*">
-<button id="generateASCII">Generate ASCII Art</button>
-<button id="generateCartoon">Generate Cartoon</button>
-<button id="generateBlackAndWhite">Generate Black & White</button>
-<button id="generateCustomEffect">Generate Custom Effect</button>
-<br>
-<img id="outputImage" alt="Output Image">
 <input type="text" id="linkInput" placeholder="Enter a link">
 <button id="generateQRCode">Generate QR Code</button>
 <input type="color" id="backgroundColorInput" value="#ffffff"> Background Color
 <input type="color" id="foregroundColorInput" value="#000000"> Foreground Color
 <div id="qrcode"></div>
-<div id="qrcode"></div>
+<input type="file" id="imageInput" accept="image/*">
+<button id="applyBlackAndWhite">Apply Black & White Filter</button>
+<button id="applyCartoonEffect">Apply Cartoon Effect</button>
+<button id="applyPixelArt">Apply Pixel Art Effect</button>
+<canvas id="canvas" style="display: none;"></canvas>
+<img id="styledImage" alt="Styled Image">
 <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 <script src="script.js"></script>
 </body>
