@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Image</title>
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+  <div id="search-bar">
+    <label for="imageUrlInput" class="siteText">User selects an image on ClickASnap:</label><br>
+    <select id="imageSelection" onchange="getImageUrl()">
+      <option>Image 1</option>
+      <option>Image 2</option>
+      <option>Image 3</option>
+      <option>Image 4</option>
+    </select>
+  </div>
+
+  <div id="main-image-section">
+    <image class="main-image" id="main-image" src="images/image_one/oscar-image-1-original.png" height="400" width="400"></image>
+    <br><label for="freePremUserSelect" class="siteText">Current User:</label>
+    <select id="freePremUserSelect" onchange="changeUser(this)">
+      <option class="free" value="0" id="selectedUser">FREE</option>
+      <option class="prem" value="1">PREMIUM</option>
+    </select>
+    <br><br><button id="modifyButton" onclick="showGenImages(document.getElementById('selectedUser'))">Modify & Print</button>
+  </div>
+
+  <div id="generated-images">
+    <span id="span-gen-images-list"></span>
+      <div id="generated-images-free" hidden>
+        <div class="generated-image" id="generated-image-0" onclick="selectGenImage(this)">
+          <h3>ORIGINAL</h3>
+          <image src="images/image_one/oscar-image-1-original.png" height="150" width="200" id="original-image"></image>
+        </div>
+        <div class="generated-image" id="generated-image-1" onclick="selectGenImage(this)">
+          <h3>ASCII</h3>
+          <image src="images/image_one/ascii/image-1-ascii-1.png" height="150" width="200" id="ascii-image"></image>
+        </div>
+        <div class="generated-image" id="generated-image-2" onclick="selectGenImage(this)">
+          <h3>CARTOON</h3>
+          <image src="images/image_one/cartoon/image-1-cartoon-1.png" height="150" width="200" id="cartoon-image"></image>
+        </div>
+        <div class="generated-image" id="generated-image-3" onclick="selectGenImage(this)">
+          <h3>BLACK & WHITE</h3>
+          <image src="images/image_one/black_and_white/image-1-bw-1.png" height="150" width="200" id="black-and-white-image"></image>
+        </div>
+      </div>
+      <div id="generated-images-prem" hidden>
+        <div class="generated-image" id="generated-image-4" onclick="selectGenImage(this)">
+          <h3>CUSTOM</h3>
+          <image src="images/image_one/oscar-image-1-original.png" height="150" width="200" class="custom-image"></image>
+        </div>
+      </div>
+    </span>
+  </div>
+
+  <div id="custom-options" hidden>
+    <div class="custom-container">
+      <h3 class="siteText">CUSTOM SECTION</h3>
+      <label id="choose-ai" class="siteTextTwo">Choose AI:</label>
+      <select id="choose-ai-select" onchange="changeCustomGenerator(this)">
+        <option id="default" value="default" hidden>PLEASE SELECT</option>
+        <option id="ascii" value="ascii">ASCII</option>
+        <option id="cartoon" value="cartoon">CARTOON</option>
+        <option id="black-and-white" value="black-and-white">BLACK & WHITE</option>
+        <option id="custom" value="custom">CUSTOM</option>
+      </select>
+      <div id="custom-text" hidden>
+        <br><label class="siteTextTwo">Custom Input:</label>
+        <input type="text" id="custom-text-input"></input>
+      </div>
+      <div id="placeholder-image">
+        <image src="" height="300" width="400"></image>
+      </div>
+      <br><button id="regenButton">REGENERATE IMAGE</button>
+    </div>
+  </div>
+
+  <br><button id="get-t-shirt-button" onclick="sendImageToAPI()">Get T-Shirt!</button>
+
+  <div id="qrcode"></div>
+
+  <script src="gen-ai-images.js"></script>
+</body>
+</html>

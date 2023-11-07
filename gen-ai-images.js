@@ -1,26 +1,110 @@
 //Function to get an image from an inputted image URL
+const imageOneList = {
+  qr : "images/image_one/image-1-qr-code.png",
+  original : "images/image_one/oscar-image-1-original.png",
+  ascii : ["images/image_one/ascii/image-1-ascii-1.png", "images/image_one/ascii/image-1-ascii-2.png", "images/image_one/ascii/image-1-ascii-3.png"],
+  cartoon : ["images/image_one/cartoon/image-1-cartoon-1.png", "images/image_one/cartoon/image-1-cartoon-2.png", "images/image_one/cartoon/image-1-cartoon-3.png"],
+  bw : ["images/image_one/black_and_white/image-1-bw-1.png", "images/image_one/black_and_white/image-1-bw-2.png"]
+};
+const imageTwoList = {
+  qr : "images/image_two/image-2-qr-code.png",
+  original : "images/image_two/oscar-image-2-original.png",
+  ascii : ["images/image_two/ascii/image-2-ascii-1.png", "images/image_two/ascii/image-2-ascii-2.png", "images/image_two/ascii/image-2-ascii-3.png"],
+  cartoon : ["images/image_two/cartoon/image-2-cartoon-1.png", "images/image_two/cartoon/image-2-cartoon-2.png", "images/image_two/cartoon/image-2-cartoon-3.png"],
+  bw : ["images/image_two/black_and_white/image-2-bw-1.png", "images/image_two/black_and_white/image-2-bw-2.png"]
+};
+const imageThreeList = {
+  qr : "images/image_three/image-3-qr-code.png",
+  original : "images/image_three/oscar-image-3-original.png",
+  ascii : ["images/image_three/ascii/image-3-ascii-1.png", "images/image_three/ascii/image-3-ascii-2.png", "images/image_three/ascii/image-3-ascii-3.png"],
+  cartoon : ["images/image_three/cartoon/image-3-cartoon-1.png", "images/image_three/cartoon/image-3-cartoon-2.png", "images/image_three/cartoon/image-3-cartoon-3.png"],
+  bw : ["images/image_three/black_and_white/image-3-bw-1.png", "images/image_three/black_and_white/image-3-bw-2.png"]
+};
+const imageFourList = {
+  qr : "images/image_four/image-4-qr-code.png",
+  original : "images/image_four/oscar-image-4-original.png",
+  ascii : ["images/image_four/ascii/image-4-ascii-1.png", "images/image_four/ascii/image-4-ascii-2.png", "images/image_four/ascii/image-4-ascii-3.png"],
+  cartoon : ["images/image_four/cartoon/image-4-cartoon-1.png", "images/image_four/cartoon/image-4-cartoon-2.png", "images/image_four/cartoon/image-4-cartoon-3.png"],
+  bw : ["images/image_four/black_and_white/image-4-bw-1.png", "images/image_four/black_and_white/image-4-bw-2.png"]
+};
+
+console.log(imageThreeList["cartoon"][0]);
+
+//Function to get an image from an imputted image URL ()
 function getImageUrl() {
-  let inputtedImageUrl = document.getElementById("urlTextBox").value;
-  let displayedImage = document.getElementById("main-image");
-  displayedImage.src = inputtedImageUrl;
-  displayedImage.width = 400;
-  displayedImage.height = 400;
-  console.log(inputtedImageUrl); 
+  let inputtedImageUrl = document.getElementById("imageSelection").value;
+  let mainImage = document.getElementById("main-image");
+  let originalImage = document.getElementById("original-image");
+  let customImage = document.getElementById("custom-image");
+  let asciiImage = document.getElementById("ascii-image");
+  let cartoonImage = document.getElementById("cartoon-image");
+  let bwImage = document.getElementById("black-and-white-image");
+  let mainImageToDisplay;
+  let asciiImageToDisplay;
+  let cartoonImageToDisplay;
+  let bwImageToDisplay;
+  console.log(inputtedImageUrl);
+  switch (inputtedImageUrl) {
+    case "Image 1":
+      mainImageToDisplay = imageOneList["original"];
+      asciiImageToDisplay = imageOneList["ascii"][0];
+      cartoonImageToDisplay = imageOneList["cartoon"][0];
+      bwImageToDisplay = imageOneList["bw"][0];
+      break;
+    case "Image 2":
+      mainImageToDisplay = imageTwoList["original"];
+      asciiImageToDisplay = imageTwoList["ascii"][0];
+      cartoonImageToDisplay = imageTwoList["cartoon"][0];
+      bwImageToDisplay = imageTwoList["bw"][0];
+      break;
+    case "Image 3":
+      mainImageToDisplay = imageThreeList["original"];
+      asciiImageToDisplay = imageThreeList["ascii"][0];
+      cartoonImageToDisplay = imageThreeList["cartoon"][0];
+      bwImageToDisplay = imageThreeList["bw"][0];
+      break;
+    case "Image 4":
+      mainImageToDisplay = imageFourList["original"];
+      asciiImageToDisplay = imageFourList["ascii"][0];
+      cartoonImageToDisplay = imageFourList["cartoon"][0];
+      bwImageToDisplay = imageFourList["bw"][0];
+      break;
+  }
+  mainImage.src = mainImageToDisplay;
+  originalImage.src = mainImageToDisplay;
+  customImage.src = mainImageToDisplay;
+  asciiImage.src = asciiImageToDisplay;
+  cartoonImage.src = cartoonImageToDisplay;
+  bwImage.src = bwImageToDisplay;
+  document.getElementById("generated-images-free").hidden = true;
+  document.getElementById("generated-images-prem").hidden = true;
+  removeAllHighlighted();
 }
 
 //Function to change selected user
 function changeUser(e) {
   let selectedUserValue = e.value;
-  const selectMenu = document.getElementById("freePremUserSelect");
-  const options = selectMenu.options;
+  const userSelectMenu = document.getElementById("freePremUserSelect");
+  const userOptions = userSelectMenu.options;
   if (selectedUserValue == 0) {
-    options[0].id = "selectedUser";
-    options[1].id = "";
+    userOptions[0].id = "selectedUser";
+    userOptions[1].id = "";
   } else {
-    options[1].id = "selectedUser";
-    options[0].id = "";
+    userOptions[1].id = "selectedUser";
+    userOptions[0].id = "";
   }
   console.log("User changed to:", document.getElementById("selectedUser").innerHTML);
+}
+
+//Function to change custom generator options
+function changeCustomGenerator(e) {
+  let selectedCustomGenerator = e.value;
+  console.log("Custom generator selected option:", selectedCustomGenerator);
+  if (selectedCustomGenerator == "custom") {
+    document.getElementById("custom-text").hidden = false;
+  } else {
+    document.getElementById("custom-text").hidden = true;
+  }
 }
 
 //Function to show a list of generated images
@@ -54,18 +138,15 @@ function selectGenImage(e) {
   e.classList.add('highlighted');
   console.log("Item highlighted");
   if (document.getElementById("generated-image-4").classList.contains('highlighted')) {
-    console.log("Custom selected");
-    //Unhide custom parameters
+    document.getElementById("custom-options").hidden = false;
   } else {
-    //Hide custom parameters
+    document.getElementById("custom-options").hidden = true;
   }
 }
 
 //Function that will be used to call Teemill API and send selected image to t-shirt preview and grab that to send back
 function sendImageToAPI() {
-  let imageURL = 'images/bird.png'; //This will be changed later to grab whatever URL link has been used
-  let tee = document.getElementById("generated-image-selected");
-  console.log("Sending t-shirt: ");
+  //TBD
 }
 
 
