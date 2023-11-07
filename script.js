@@ -109,3 +109,73 @@ var pictures=[ {
             displaySortedPictures(sortedPictures);
           }
          });
+//ai system draft
+const imageInput = document.getElementById('imageInput');
+const generateASCII = document.getElementById('generateASCII');
+const generateCartoon = document.getElementById('generateCartoon');
+const generateBlackAndWhite = document.getElementById('generateBlackAndWhite');
+const generateCustomEffect = document.getElementById('generateCustomEffect');
+const outputImage = document.getElementById('outputImage');
+function loadAndProcessImage(imageProcessor) {
+  const file = imageInput.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const img = new Image();
+      img.src = e.target.result;
+      img.onload = function () {
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        canvas.width = img.width;
+        canvas.height = img.height;
+        context.drawImage(img, 0, 0, img.width, img.height);
+        imageProcessor(canvas, context);
+      };
+    };
+    reader.readAsDataURL(file);
+  }
+}
+generateASCII.addEventListener('click', () => {
+  loadAndProcessImage((canvas, context) => {
+    // You can implement ASCII conversion here
+    // Replace the following line with your ASCII conversion logic
+    outputImage.src = canvas.toDataURL('image/jpeg');
+  });
+});
+generateCartoon.addEventListener('click', () => {
+  loadAndProcessImage((canvas, context) => {
+    // You can implement cartoon effect here
+    // Replace the following line with your cartoon effect logic
+    outputImage.src = canvas.toDataURL('image/jpeg');
+  });
+});
+generateBlackAndWhite.addEventListener('click', () => {
+  loadAndProcessImage((canvas, context) => {
+    context.fillStyle = 'rgba(0, 0, 0, 1)';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    outputImage.src = canvas.toDataURL('image/jpeg');
+  });
+});
+generateCustomEffect.addEventListener('click', () => {
+  loadAndProcessImage((canvas, context) => {
+    // You can implement your custom effect here
+    // Replace the following line with your custom effect logic
+    outputImage.src = canvas.toDataURL('image/jpeg');
+  });
+});
+imageInput.addEventListener('change', () => {
+  outputImage.src = '';
+});
+
+//qr code generate
+document.getElementById('generateQRCode').addEventListener('click', function () {
+    const link = document.getElementById('linkInput').value;
+    if (link) {
+      const qrcode = new QRCode(document.getElementById('qrcode'), {
+        text: link,
+        width: 128,
+        height: 128,
+      });
+    }
+  });
+         

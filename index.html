@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" type="text/css" href="/styles.css">
 <title>Hackathon</title>
 </head>
 <body>
@@ -30,6 +30,18 @@
 <option value="month">Month</option>
 <option value="year">Year</option>
 </select>
+<input type="file" id="imageInput" accept="image/*">
+<button id="generateASCII">Generate ASCII Art</button>
+<button id="generateCartoon">Generate Cartoon</button>
+<button id="generateBlackAndWhite">Generate Black & White</button>
+<button id="generateCustomEffect">Generate Custom Effect</button>
+<br>
+<img id="outputImage" alt="Output Image">
+<input type="text" id="linkInput" placeholder="Enter a link">
+<button id="generateQRCode">Generate QR Code</button>
+<div id="qrcode"></div>
+<div id="qrcodes"></div>
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
