@@ -12,5 +12,9 @@ def generateTShirt():
     data = request.json
 
     returnJSON = api.createImageTshirt(data['url']) 
-    
+
     return returnJSON
+
+
+if __name__ == '__main__':
+    app.run()
