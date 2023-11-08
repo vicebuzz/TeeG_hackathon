@@ -192,8 +192,30 @@ main .image-info-options .top-line .info-buttons button {
   border-radius: 10px;  
 }
 
+main .image-info-options .top-line .info-buttons p {
+  background-color: white; 
+  border: none; 
+  color: indigo; 
+  transition: background-color 0.5s ease; 
+  font-size: 1rem;
+  font-weight: bold;
+  border: 2px solid indigo; 
+  max-height: 30px; 
+  margin-right: 12px;
+  border-radius: 10px; 
+  text-align: center;  
+  vertical-align: middle; 
+  padding: 4px 18px; 
+}
+
+main .image-info-options .top-line .info-buttons p:hover {
+  background-color: rgb(230, 198, 255);
+  cursor: pointer; 
+}
+
 main .image-info-options .top-line .info-buttons button:hover {
   background-color: rgb(230, 198, 255); 
+  cursor: pointer; 
 }
 
 main .image-info-options .image-info {
