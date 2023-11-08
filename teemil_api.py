@@ -11,8 +11,7 @@ class TeemilAPI():
     def __init__(self):
 
         self.publicSafeKey = 'elCp6zR3XcWXOE49c2EIoLc0yJleaJdJ3LMrBRrX'
-        self.privateKey = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ0ZWVtaWxsLmNvbSIsIm5iZiI6MTY5OTI4MzI2OCwiaWF0IjoxNjk5MjgzMjY4LCJzdWIiOjMyNDMzMiwiZXhwIjo5OTk5OTk5OTk5OTksInV1aWQiOiI2NTQ5MDE0NDJlMjU4IiwidG9rZW5faWQiOjY3MSwiY3JlYXRlZF9hdCI6MTY5OTI4MzI2OH0.RSLAIp_6aCsZ3FiRDLSbRuy4J2t6KQ-ZPS6OxcwxkqM'
-
+        
     def createImageTshirt(self, img_url, local):
 
         if not local:
