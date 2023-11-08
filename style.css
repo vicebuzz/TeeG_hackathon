@@ -24,6 +24,7 @@ max-width: 100%;
     font-family: Arial, Helvetica, sans-serif;
     box-shadow: 0px 5px 8px #efefef;
     height: 50px;
+    margin-bottom:16px; 
 }
 .flex-left{
     flex-basis: 50%;
