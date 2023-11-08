@@ -1,10 +1,15 @@
+import os
 from teemil_api import TeemilAPI
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 
-app = Flask('teemill-api-app')
-
+app = Flask(__name__)
 
 api = TeemilAPI()
+
+@app.route('/')
+def home():
+    print(os.listdir())
+    return render_template('gen-ai-page.html')
 
 @app.route('/generate-t-shirt', methods = ['POST'])
 def generateTShirt():
