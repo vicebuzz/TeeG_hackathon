@@ -1,31 +1,31 @@
 //Function to get an image from an inputted image URL
 const imageOneList = {
-  qr : "./images/image_one/image-1-qr-code.png",
-  original : "./images/image_one/oscar-image-1-original.png",
-  ascii : ["./images/image_one/ascii/image-1-ascii-1.png", "./images/image_one/ascii/image-1-ascii-2.png", "./images/image_one/ascii/image-1-ascii-3.png"],
-  cartoon : ["./images/image_one/cartoon/image-1-cartoon-1.png", "./images/image_one/cartoon/image-1-cartoon-2.png", "./images/image_one/cartoon/image-1-cartoon-3.png"],
-  bw : ["./images/image_one/black_and_white/image-1-bw-1.png", "./images/image_one/black_and_white/image-1-bw-2.png"]
+  qr : "./static/images/image_one/image-1-qr-code.png",
+  original : "./static/images/image_one/oscar-image-1-original.png",
+  ascii : ["./static/images/image_one/ascii/image-1-ascii-1.png", "./static/images/image_one/ascii/image-1-ascii-2.png", "./static/images/image_one/ascii/image-1-ascii-3.png"],
+  cartoon : ["./static/images/image_one/cartoon/image-1-cartoon-1.png", "./static/images/image_one/cartoon/image-1-cartoon-2.png", "./static/images/image_one/cartoon/image-1-cartoon-3.png"],
+  bw : ["./static/images/image_one/black_and_white/image-1-bw-1.png", "./static/images/image_one/black_and_white/image-1-bw-2.png"]
 };
 const imageTwoList = {
-  qr : "./images/image_two/image-2-qr-code.png",
-  original : "./images/image_two/oscar-image-2-original.png",
-  ascii : ["./images/image_two/ascii/image-2-ascii-1.png", "./images/image_two/ascii/image-2-ascii-2.png", "./images/image_two/ascii/image-2-ascii-3.png"],
-  cartoon : ["./images/image_two/cartoon/image-2-cartoon-1.png", "./images/image_two/cartoon/image-2-cartoon-2.png", "./images/image_two/cartoon/image-2-cartoon-3.png"],
-  bw : ["./images/image_two/black_and_white/image-2-bw-1.png", "./images/image_two/black_and_white/image-2-bw-2.png"]
+  qr : "./static/images/image_two/image-2-qr-code.png",
+  original : "./static/images/image_two/oscar-image-2-original.png",
+  ascii : ["./static/images/image_two/ascii/image-2-ascii-1.png", "./static/images/image_two/ascii/image-2-ascii-2.png", "./static/images/image_two/ascii/image-2-ascii-3.png"],
+  cartoon : ["./static/images/image_two/cartoon/image-2-cartoon-1.png", "./static/images/image_two/cartoon/image-2-cartoon-2.png", "./static/images/image_two/cartoon/image-2-cartoon-3.png"],
+  bw : ["./static/images/image_two/black_and_white/image-2-bw-1.png", "./static/images/image_two/black_and_white/image-2-bw-2.png"]
 };
 const imageThreeList = {
-  qr : "./images/image_three/image-3-qr-code.png",
-  original : "./images/image_three/oscar-image-3-original.png",
-  ascii : ["./images/image_three/ascii/image-3-ascii-1.png", "./images/image_three/ascii/image-3-ascii-2.png", "./images/image_three/ascii/image-3-ascii-3.png"],
-  cartoon : ["./images/image_three/cartoon/image-3-cartoon-1.png", "./images/image_three/cartoon/image-3-cartoon-2.png", "./images/image_three/cartoon/image-3-cartoon-3.png"],
-  bw : ["./images/image_three/black_and_white/image-3-bw-1.png", "./images/image_three/black_and_white/image-3-bw-2.png"]
+  qr : "./static/images/image_three/image-3-qr-code.png",
+  original : "./static/images/image_three/oscar-image-3-original.png",
+  ascii : ["./static/images/image_three/ascii/image-3-ascii-1.png", "./static/images/image_three/ascii/image-3-ascii-2.png", "./static/images/image_three/ascii/image-3-ascii-3.png"],
+  cartoon : ["./static/images/image_three/cartoon/image-3-cartoon-1.png", "./static/images/image_three/cartoon/image-3-cartoon-2.png", "./static/images/image_three/cartoon/image-3-cartoon-3.png"],
+  bw : ["./static/images/image_three/black_and_white/image-3-bw-1.png", "./static/images/image_three/black_and_white/image-3-bw-2.png"]
 };
 const imageFourList = {
-  qr : "./images/image_four/image-4-qr-code.png",
-  original : "./images/image_four/oscar-image-4-original.png",
-  ascii : ["./images/image_four/ascii/image-4-ascii-1.png", "./images/image_four/ascii/image-4-ascii-2.png", "./images/image_four/ascii/image-4-ascii-3.png"],
-  cartoon : ["./images/image_four/cartoon/image-4-cartoon-1.png", "./images/image_four/cartoon/image-4-cartoon-2.png", "./images/image_four/cartoon/image-4-cartoon-3.png"],
-  bw : ["./images/image_four/black_and_white/image-4-bw-1.png", "./images/image_four/black_and_white/image-4-bw-2.png"]
+  qr : "./static/images/image_four/image-4-qr-code.png",
+  original : "./static/images/image_four/oscar-image-4-original.png",
+  ascii : ["./static/images/image_four/ascii/image-4-ascii-1.png", "./static/images/image_four/ascii/image-4-ascii-2.png", "./static/images/image_four/ascii/image-4-ascii-3.png"],
+  cartoon : ["./static/images/image_four/cartoon/image-4-cartoon-1.png", "./static/images/image_four/cartoon/image-4-cartoon-2.png", "./static/images/image_four/cartoon/image-4-cartoon-3.png"],
+  bw : ["./static/images/image_four/black_and_white/image-4-bw-1.png", "./static/images/image_four/black_and_white/image-4-bw-2.png"]
 };
 
 let selectedCustomGenerator;
@@ -139,10 +139,12 @@ function generateNewImage() {
   }
   
   let imageToChange = document.getElementById("custom-generated-image");
+  let imageToChangeTwo = document.getElementById("custom-image");
   if ((indexToChangeTo == 2 && imageList == "bw") || indexToChangeTo == 3) {
     indexToChangeTo = 0;
   } 
   imageToChange.src = imageDict[imageList][indexToChangeTo];
+  imageToChangeTwo.src = imageDict[imageList][indexToChangeTo];
   indexToChangeTo += 1;
   console.log("generated new image");
 }
