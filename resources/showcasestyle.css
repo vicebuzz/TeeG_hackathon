@@ -151,3 +151,86 @@ main .image-section .showcase-image .main-image  img {
   height: 100%;
   object-fit: contain; 
 }
+
+main .image-info-options {
+
+}
+
+main .image-info-options .top-line {
+  display: flex; 
+  justify-content: space-between;
+  /*border: 1px solid red; */
+}
+
+main .image-info-options .top-line .rating{ 
+  overflow: hidden; 
+  max-width: 210px; 
+}
+
+main .image-info-options .top-line .rating img {
+  width: 100%; 
+  height: auto; 
+}
+
+main .image-info-options .top-line .info-buttons {
+  /*border: 1px solid red;*/ 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+}
+
+main .image-info-options .top-line .info-buttons button {
+  background-color: white; 
+  border: none; 
+  color: indigo;
+  transition: background-color 0.5s ease;
+  font-weight: bold; 
+  font-size: 1rem; 
+  border: 2px solid indigo;
+  height: 30px; 
+  margin-right: 12px; 
+  border-radius: 10px;  
+}
+
+main .image-info-options .top-line .info-buttons button:hover {
+  background-color: rgb(230, 198, 255); 
+}
+
+main .image-info-options .image-info {
+
+}
+
+main .image-info-options .image-info .title {
+  font-size: 2rem; 
+  font-weight: bold; 
+  margin-bottom: 0px; 
+}
+
+main .image-info-options .image-info .date {
+  font-size: 1rem; 
+  margin-top: 8px; 
+}
+
+main .image-info-options .image-info .description {
+  font-size: 0.8rem; 
+  max-width: 50%; 
+}
+
+main .image-info-options .image-info .categories {
+  font-size: 1.05rem; 
+}
+
+main .image-info-options .image-info .categories .bold {
+  font-weight: bold; 
+}
+
+main .image-info-options .tags {
+  display: flex;  
+}
+
+main .image-info-options .tags p {
+  border: 2px solid rgb(50, 50, 50);
+  margin: 4px; 
+  padding: 8px 24px; 
+  border-radius: 10px; 
+}
