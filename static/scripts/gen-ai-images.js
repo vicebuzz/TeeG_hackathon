@@ -72,13 +72,13 @@ function getImageUrl() {
       bwImageToDisplay = imageFourList["bw"][0];
       break;
   }
-  mainImage.src = mainImageToDisplay;
-  originalImage.src = mainImageToDisplay;
-  customImage.src = mainImageToDisplay;
-  customGenImage.src = mainImageToDisplay;
-  asciiImage.src = asciiImageToDisplay;
-  cartoonImage.src = cartoonImageToDisplay;
-  bwImage.src = bwImageToDisplay;
+  mainImage.src = mainImageToDisplay.replace('images', 'images_tshirts');
+  originalImage.src = mainImageToDisplay.replace('images', 'images_tshirts');
+  customImage.src = mainImageToDisplay.replace('images', 'images_tshirts');
+  customGenImage.src = mainImageToDisplay.replace('images', 'images_tshirts');
+  asciiImage.src = asciiImageToDisplay.replace('images', 'images_tshirts');
+  cartoonImage.src = cartoonImageToDisplay.replace('images', 'images_tshirts');
+  bwImage.src = bwImageToDisplay.replace('images', 'images_tshirts');
   document.getElementById("generated-images-free").hidden = true;
   document.getElementById("generated-images-prem").hidden = true;
   document.getElementById("custom-options").hidden = true;
@@ -187,15 +187,15 @@ function selectGenImage(e) {
 }
 
 tShirtGenerateButton = document.getElementById('get-t-shirt-button')
-tShirtGenerateButton.addEventListener('click', () => {sendImageToAPI(document.getElementById('main-image').src)})
+tShirtGenerateButton.addEventListener('click', sendImageToAPI)
 
 //Function that will be used to call Teemill API and send selected image to t-shirt preview and grab that to send back
-function sendImageToAPI(imageURL) {
+function sendImageToAPI() {
 
-  console.log(imageURL)
+  imageHighlighed = document.querySelector('.highlighted img');
 
   let payload = {};
-  payload.url = imageURL
+  payload.url = imageHighlighed.src.replace('images_tshirts', 'images')
   payload.local = 1
 
   let xhr = new XMLHttpRequest();
@@ -210,6 +210,8 @@ function sendImageToAPI(imageURL) {
 
       console.log(image_url)
       console.log(url)
+
+      window.open(url, '_blank');
 
     }
   }

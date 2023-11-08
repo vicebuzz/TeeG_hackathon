@@ -53,17 +53,17 @@ class TeemilAPI():
     def encodeImageLocal (self, img_path):
 
         # flask web feature
-        '''with open(f".{img_path.split('5000')[1]}", 'rb') as file:
+        with open(f".{img_path.split('5000')[1]}", 'rb') as file:
             img_data = file.read()
 
-            b64 = base64.b64encode(img_data)'''
+            b64 = base64.b64encode(img_data)
 
-        print(img_path)
+        '''print(img_path)
 
         with open(img_path, 'rb') as file:
             img_data = file.read()
 
-            b64 = base64.b64encode(img_data)
+            b64 = base64.b64encode(img_data)'''
 
         return b64
     
