@@ -62,7 +62,7 @@
       <h3 class="siteText">CUSTOM SECTION</h3>
       <label id="choose-ai" class="siteTextTwo">Choose AI:</label>
       <select id="choose-ai-select" onchange="changeCustomGenerator(this)">
-        <option id="default" value="default" hidden>PLEASE SELECT</option>
+        <option id="original" value="original" hidden>PLEASE SELECT</option>
         <option id="ascii" value="ascii">ASCII</option>
         <option id="cartoon" value="cartoon">CARTOON</option>
         <option id="black-and-white" value="black-and-white">BLACK & WHITE</option>
@@ -70,7 +70,7 @@
       </select>
       <div id="custom-text" hidden>
         <br><label class="siteTextTwo">Custom Input:</label>
-        <input type="text" id="custom-text-input"></input>
+        <input type="text" id="custom-text-input" placeholder="e.g. 'Add a shark'"></input>
       </div>
       <div id="placeholder-image">
         <image src="images/image_one/oscar-image-1-original.png" height="300" width="400" id="custom-generated-image"></image>
