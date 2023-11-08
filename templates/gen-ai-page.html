@@ -20,7 +20,7 @@
 
   <div id="main-image-section">
     <!--<image class="main-image" id="main-image" src="./images/image_one/oscar-image-1-original.png" height="400" width="400"></image>-->
-    <image class="main-image" id="main-image" src="{{ url_for('static', filename='images/image_one/oscar-image-1-original.png') }}" height="400" width="400"></image>
+    <image class="main-image" id="main-image" src="static/images/image_one/oscar-image-1-original.png" height="400" width="400"></image>
     <br><label for="freePremUserSelect" class="siteText">Current User:</label>
     <select id="freePremUserSelect" onchange="changeUser(this)">
       <option class="free" value="0" id="selectedUser">FREE</option>
@@ -35,29 +35,29 @@
         <div class="generated-image" id="generated-image-0" onclick="selectGenImage(this)">
           <h3>ORIGINAL</h3>
           <!--<image src="./images/image_one/oscar-image-1-original.png" height="150" width="200" id="original-image"></image>-->
-          <image src="{{ url_for('static', filename='images/image_one/black_and_white/image-1-bw-1.png') }}" height="300" width="400" id="custom-generated-image"></image>
+          <image src="./static/images/image_one/oscar-image-1-original.png" height="300" width="400" id="original-image"></image>
         </div>
         <div class="generated-image" id="generated-image-1" onclick="selectGenImage(this)">
           <h3>ASCII</h3>
           <!--<image src="./images/image_one/ascii/image-1-ascii-1.png" height="150" width="200" id="ascii-image"></image>-->
-          <image src="{{ url_for('static', filename='images/image_one/ascii/image-1-ascii-1.png') }}" height="300" width="400" id="custom-generated-image"></image>
+          <image src="./static/images/image_one/ascii/image-1-ascii-1.png" height="300" width="400" id="ascii-image"></image>
         </div>
         <div class="generated-image" id="generated-image-2" onclick="selectGenImage(this)">
           <h3>CARTOON</h3>
           <!--<image src="./images/image_one/cartoon/image-1-cartoon-1.png" height="150" width="200" id="cartoon-image"></image>-->
-          <image src="{{ url_for('static', filename='images/image_one/cartoon/image-1-cartoon-1.png') }}" height="300" width="400" id="custom-generated-image"></image>
+          <image src="./static/images/image_one/cartoon/image-1-cartoon-1.png" height="300" width="400" id="cartoon-image"></image>
         </div>
         <div class="generated-image" id="generated-image-3" onclick="selectGenImage(this)">
           <h3>BLACK & WHITE</h3>
           <!--<image src="./images/image_one/black_and_white/image-1-bw-1.png" height="150" width="200" id="black-and-white-image"></image>-->
-          <image src="{{ url_for('static', filename='images/image_one/black_and_white/image-1-bw-1.png') }}" height="300" width="400" id="custom-generated-image"></image>
+          <image src="./static/images/image_one/black_and_white/image-1-bw-1.png" height="300" width="400" id="black-and-white-image"></image>
         </div>
       </div>
       <div id="generated-images-prem" hidden>
         <div class="generated-image" id="generated-image-4" onclick="selectGenImage(this)">
           <h3>CUSTOM</h3>
           <!--<image src="./images/image_one/oscar-image-1-original.png" height="150" width="200" id="custom-image"></image>-->
-          <image src="{{ url_for('static', filename='images/image_one/oscar-image-1-original.png') }}" height="300" width="400" id="custom-generated-image"></image>
+          <image src="./static/images/image_one/oscar-image-1-original.png" height="300" width="400" id="custom-image"></image>
         </div>
       </div>
     </span>
@@ -79,7 +79,7 @@
         <input type="text" id="custom-text-input"></input>
       </div>
       <div id="placeholder-image">
-        <image src="{{ url_for('static', filename='images/image_one/oscar-image-1-original.png') }}" height="300" width="400" id="custom-generated-image"></image>
+        <image src="./static/images/image_one/oscar-image-1-original.png" height="300" width="400" id="custom-generated-image"></image>
         <!--<image src="./images/image_one/oscar-image-1-original.png" height="300" width="400" id="custom-generated-image"></image>-->
       </div>
       <br><button id="regenButton" onclick="generateNewImage()">REGENERATE IMAGE</button>
@@ -90,6 +90,6 @@
 
   <div id="qrcode"></div>
 
-  <script src="{{ url_for('static', filename='scripts/gen-ai-images.js') }}"></script>
+  <script src="./static/scripts/gen-ai-images.js"></script>
 </body>
 </html>
