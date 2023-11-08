@@ -16,7 +16,7 @@ def generateTShirt():
     
     data = request.json
 
-    returnJSON = api.createImageTshirt(data['url']) 
+    returnJSON = api.createImageTshirt(data['url'], data['local']) 
 
     return returnJSON
 

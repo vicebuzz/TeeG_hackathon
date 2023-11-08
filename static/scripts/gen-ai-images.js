@@ -184,11 +184,15 @@ function selectGenImage(e) {
   }
 }
 
+tShirtGenerateButton = document.getElementById('get-t-shirt-button')
+tShirtGenerateButton.addEventListener('click', () => {sendImageToAPI(document.getElementById('main-image').src)})
+
 //Function that will be used to call Teemill API and send selected image to t-shirt preview and grab that to send back
 function sendImageToAPI(imageURL) {
 
   let payload = {};
   payload.url = imageURL
+  payload.local = 1
 
   let xhr = new XMLHttpRequest();
 
@@ -197,9 +201,11 @@ function sendImageToAPI(imageURL) {
       
       let response = JSON.parse(this.responseText)
 
-      image_url = response['image_url']
+      image_url = response['image']
+      url = response['url']
 
       console.log(image_url)
+      console.log(url)
 
     }
   }
