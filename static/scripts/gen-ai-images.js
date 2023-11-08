@@ -192,6 +192,8 @@ tShirtGenerateButton.addEventListener('click', () => {sendImageToAPI(document.ge
 //Function that will be used to call Teemill API and send selected image to t-shirt preview and grab that to send back
 function sendImageToAPI(imageURL) {
 
+  console.log(imageURL)
+
   let payload = {};
   payload.url = imageURL
   payload.local = 1
