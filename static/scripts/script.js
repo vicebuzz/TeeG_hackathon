@@ -68,6 +68,7 @@ function scrollLeftOnClick() {
   setImageURL(imageCount); 
 }
 
+//Scroll Button Functionality of Image Showcase: 
 function scrollRightOnClick() {
   console.log('Click right'); 
   if (imageCount === 1) {
@@ -91,4 +92,24 @@ function showHackathonFunctionality() {
   } else {
     el.hidden = true; 
   }
+}
+
+//Jack added below
+const originalChoice = document.getElementById("generated-original-image");
+originalChoice.addEventListener("click", highlightImage);
+const asciiChoice = document.getElementById("generated-ascii-image");
+asciiChoice.addEventListener("click", highlightImage)
+const cartoonChoice = document.getElementById("generated-cartoon-image");
+cartoonChoice.addEventListener("click", highlightImage)
+const bwChoice = document.getElementById("generated-black-and-white-image");
+bwChoice.addEventListener("click", highlightImage)
+const customChoice = document.getElementById("generated-custom-image");
+customChoice.addEventListener("click", highlightImage)
+
+function highlightImage() {
+  let pastHighligted = document.querySelectorAll('.highlighted');
+  pastHighligted.forEach((el) => {
+    el.classList.remove('highlighted');
+  });
+  this.classList.add("highlighted");
 }

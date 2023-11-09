@@ -1,8 +1,13 @@
 html {
   height: 100%;
   width: 100%;
-  background-color: darkgrey;
+  background-color: white;
   text-align: center;
+}
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 input {
@@ -11,27 +16,27 @@ input {
 
 /* Webpage Header */
 header {
-  color: white;
+  color: black;
   padding: 3px;
-  border-bottom: 1px solid white;
-  background-color: grey;
+  border-bottom: 0px solid white;
+  background-color: white;
   text-align: center;
   text-decoration: bold;
 }
 
 /* Buttons */
 button, select {
-  color: red;
-  background-color: rgb(50,50,50);
+  color: black;
+  background-color: white;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
-  border: 1px white solid;
+  border: 0px white solid;
   padding: 8px;
 }
 
 button:hover {
-  background-color: rgb(240,240,240);
-  color: black;
+  background-color: black;
+  color: white;
   cursor: pointer;
 }
 
@@ -73,13 +78,14 @@ button#get-t-shirt-button {
   margin-right: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
-  border: 2px black solid;
+  border: 0px black solid;
 }
 
 .generated-image:hover {
   cursor: pointer;
-  scale: 1.1;
-  background-color: red;
+  transform: scale(1.05);
+  color: white;
+  background-color: black;
 }
 
 #generated-images {

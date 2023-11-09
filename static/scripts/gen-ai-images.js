@@ -100,13 +100,13 @@ function getImageUrl() {
       bwImageToDisplay = imageFourList["bw"][0];
       break;
   }
-  mainImage.src = mainImageToDisplay;
-  originalImage.src = mainImageToDisplay;
-  customImage.src = mainImageToDisplay;
-  customGenImage.src = mainImageToDisplay;
-  asciiImage.src = asciiImageToDisplay;
-  cartoonImage.src = cartoonImageToDisplay;
-  bwImage.src = bwImageToDisplay;
+  mainImage.src = mainImageToDisplay.replace('images', 'images_tshirts');
+  originalImage.src = mainImageToDisplay.replace('images', 'images_tshirts');
+  customImage.src = mainImageToDisplay.replace('images', 'images_tshirts');
+  customGenImage.src = mainImageToDisplay.replace('images', 'images_tshirts');
+  asciiImage.src = asciiImageToDisplay.replace('images', 'images_tshirts');
+  cartoonImage.src = cartoonImageToDisplay.replace('images', 'images_tshirts');
+  bwImage.src = bwImageToDisplay.replace('images', 'images_tshirts');
   document.getElementById("generated-images-free").hidden = true;
   document.getElementById("generated-images-prem").hidden = true;
   document.getElementById("custom-options").hidden = true;
@@ -170,6 +170,14 @@ function generateNewImage() {
   }
 
   let imageToChange = document.getElementById("custom-generated-image");
+  let imageToChangeTwo = document.getElementById("custom-image");
+  if ((indexToChangeTo == 2 && imageList == "bw") || indexToChangeTo == 3) {
+    indexToChangeTo = 0;
+  } 
+  imageToChange.src = imageDict[imageList][indexToChangeTo];
+  imageToChangeTwo.src = imageDict[imageList][indexToChangeTo];
+  indexToChangeTo += 1;
+  console.log("generated new image");
   
   if (genType == "ascii" || genType == "cartoon" || genType == "bw") {
     if ((indexToChangeTo == 2 && genType == "bw") || indexToChangeTo == 3) {
@@ -225,9 +233,42 @@ function selectGenImage(e) {
   }
 }
 
+tShirtGenerateButton = document.getElementById('get-t-shirt-button')
+tShirtGenerateButton.addEventListener('click', sendImageToAPI)
+
 //Function that will be used to call Teemill API and send selected image to t-shirt preview and grab that to send back
 function sendImageToAPI() {
-  //TBD
+
+  imageHighlighed = document.querySelector('.highlighted img');
+
+  let payload = {};
+  payload.url = imageHighlighed.src.replace('images_tshirts', 'images')
+  payload.local = 1
+
+  let xhr = new XMLHttpRequest();
+
+  xhr.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      
+      let response = JSON.parse(this.responseText)
+
+      image_url = response['image']
+      url = response['url']
+
+      console.log(image_url)
+      console.log(url)
+
+      window.open(url, '_blank');
+
+    }
+  }
+
+  xhr.open("POST", "/generate-t-shirt", true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+
+  let sendData = JSON.stringify(payload);
+  xhr.send(sendData);
+
 }
 
 //Function to test Importing

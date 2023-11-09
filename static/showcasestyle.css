@@ -256,3 +256,21 @@ main .image-info-options .tags p {
   padding: 8px 24px; 
   border-radius: 10px; 
 }
+
+/* Jack added this part - do with it as you will this is just baseline so it formatted for you to see it in action */
+main .generated-image {
+  border: 1px solid black;
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+main .generated-image:hover {
+  cursor: pointer;
+  scale: 1.05;
+}
+
+main .highlighted {
+  background-color: yellow;
+}
