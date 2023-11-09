@@ -9,16 +9,35 @@ import * as genai from '../scripts/gen-ai-images.js';
 //Default image (Campfire)
 let imageCount = 1;
 let imageCountMax = 4; //Set to current max number of images
-let imageURL = ''; 
+let imageURL = '';
+let imageInfo;
 
 function setImageURL(imageCount) {
   
-  let imageInfo = genai.returnImageList(imageCount);
-  imageURL = imageInfo.original; 
+  imageInfo = genai.returnImageList(imageCount);
+  imageURL = imageInfo.original;
 
   //Set picture URL within html document
   let el = document.getElementById('picture-showcase-main-image'); 
   el.setAttribute('src', imageURL); 
+
+  el = document.getElementById('original-image');
+  el.setAttribute('src', imageURL.replace('images', 'images_tshirts'));
+
+  el = document.getElementById('ascii-image');
+  el.setAttribute('src', imageInfo.ascii[0].replace('images', 'images_tshirts'));
+
+  el = document.getElementById('cartoon-image');
+  el.setAttribute('src', imageInfo.cartoon[0].replace('images', 'images_tshirts'));
+
+  el = document.getElementById('black-and-white-image');
+  el.setAttribute('src', imageInfo.bw[0].replace('images', 'images_tshirts'));
+
+  el = document.getElementById('custom-image');
+  el.setAttribute('src', imageURL.replace('images', 'images_tshirts'));
+
+  el = document.getElementById('custom-image-regenerated');
+  el.setAttribute('src', imageURL.replace('images', 'images_tshirts')); 
 
   el = document.getElementById('title'); 
   el.innerHTML = imageInfo.title; 
@@ -111,6 +130,7 @@ function toggleCustomSection() {
 }
 
 //Jack added below
+//Event listeners and function to highlight t-shirt design
 const originalChoice = document.getElementById("generated-original-image");
 originalChoice.addEventListener("click", highlightImage);
 const asciiChoice = document.getElementById("generated-ascii-image");
@@ -128,4 +148,47 @@ function highlightImage() {
     el.classList.remove('highlighted');
   });
   this.classList.add("highlighted");
+}
+
+//Event listener to check selected custom regernate option (premium user)
+const aiOptions = document.getElementById("choose-ai-select");
+aiOptions.addEventListener("change", getAIGenerator)
+let selectedAI;
+let imagesToLoop;
+let currentRegeneratorIndex = 0;
+
+function getAIGenerator() {
+  let imageToChange = document.getElementById("custom-image-regenerated");
+  let secondImageToChange = document.getElementById("custom-image");
+  selectedAI = aiOptions.value;
+  if (selectedAI == "black-and-white") {
+    selectedAI = "bw";
+  }
+  if (selectedAI != "custom") {
+    imagesToLoop = imageInfo[selectedAI];
+    for (let idx in imagesToLoop) {
+      imagesToLoop[idx] = imagesToLoop[idx].replace("/images/", "/images_tshirts/");
+    }
+    imageToChange.src = imagesToLoop[0];
+    secondImageToChange.src = imagesToLoop[0];
+  } else {
+    console.log("Custom clicked");
+  }
+}
+
+//Event listener on regenerate button and function to regenerate a new image
+el = document.getElementById("regenButton");
+el.addEventListener("click", regenerateImage);
+
+function regenerateImage() {
+  if (selectedAI != "custom") {
+    let imageToChange = document.getElementById("custom-image-regenerated");
+    let secondImageToChange = document.getElementById("custom-image");
+    currentRegeneratorIndex += 1;
+    if (selectedAI == "bw" && currentRegeneratorIndex == 2 || currentRegeneratorIndex == 3) {
+      currentRegeneratorIndex = 0;
+    }
+    imageToChange.src = imagesToLoop[currentRegeneratorIndex];
+    secondImageToChange.src = imagesToLoop[currentRegeneratorIndex];
+  }
 }

@@ -149,7 +149,7 @@ function generateNewImage() {
   let imageDict;
   let genType;
 
-  //Get generatory type
+  //Get generator type
   if (currentGenerator == "ascii") {
     genType = "ascii";
   } else if (currentGenerator == "cartoon") {
