@@ -1,31 +1,59 @@
 //Function to get an image from an inputted image URL
 const imageOneList = {
-  qr : "images/image_one/image-1-qr-code.png",
-  original : "images/image_one/oscar-image-1-original.png",
-  ascii : ["images/image_one/ascii/image-1-ascii-1.png", "images/image_one/ascii/image-1-ascii-2.png", "images/image_one/ascii/image-1-ascii-3.png"],
-  cartoon : ["images/image_one/cartoon/image-1-cartoon-1.png", "images/image_one/cartoon/image-1-cartoon-2.png", "images/image_one/cartoon/image-1-cartoon-3.png"],
-  bw : ["images/image_one/black_and_white/image-1-bw-1.png", "images/image_one/black_and_white/image-1-bw-2.png"]
+  qr : "../static/images/image_one/image-1-qr-code.png",
+  original : "../static/images/image_one/oscar-image-1-original.png",
+  ascii : ["../static/images/image_one/ascii/image-1-ascii-1.png", "../static/images/image_one/ascii/image-1-ascii-2.png", "../static/images/image_one/ascii/image-1-ascii-3.png"],
+  cartoon : ["../static/images/image_one/cartoon/image-1-cartoon-1.png", "../static/images/image_one/cartoon/image-1-cartoon-2.png", "../static/images/image_one/cartoon/image-1-cartoon-3.png"],
+  bw : ["../static/images/image_one/black_and_white/image-1-bw-1.png", "../static/images/image_one/black_and_white/image-1-bw-2.png"],
+
+  //Semantic Image Info 
+  title : 'Campfire',
+  desc : 'Campfire on the beach', 
+  date : '6th March 2023', 
+  category: 'Nature', 
+  tags : ['Nature', 'Fire', 'Fireplace', 'Beach', 'Flames']
 };
 const imageTwoList = {
-  qr : "images/image_two/image-2-qr-code.png",
-  original : "images/image_two/oscar-image-2-original.png",
-  ascii : ["images/image_two/ascii/image-2-ascii-1.png", "images/image_two/ascii/image-2-ascii-2.png", "images/image_two/ascii/image-2-ascii-3.png"],
-  cartoon : ["images/image_two/cartoon/image-2-cartoon-1.png", "images/image_two/cartoon/image-2-cartoon-2.png", "images/image_two/cartoon/image-2-cartoon-3.png"],
-  bw : ["images/image_two/black_and_white/image-2-bw-1.png", "images/image_two/black_and_white/image-2-bw-2.png"]
+  qr : "../static/images/image_two/image-2-qr-code.png",
+  original : "../static/images/image_two/oscar-image-2-original.png",
+  ascii : ["../static/images/image_two/ascii/image-2-ascii-1.png", "../static/images/image_two/ascii/image-2-ascii-2.png", "../static/images/image_two/ascii/image-2-ascii-3.png"],
+  cartoon : ["../static/images/image_two/cartoon/image-2-cartoon-1.png", "../static/images/image_two/cartoon/image-2-cartoon-2.png", "../static/images/image_two/cartoon/image-2-cartoon-3.png"],
+  bw : ["../static//images/image_two/black_and_white/image-2-bw-1.png", "../static/images/image_two/black_and_white/image-2-bw-2.png"],
+
+   //Semantic Image Info 
+   title : 'Rock Pile',
+   desc : 'Taken on the Faroe Islands, a rock pile that we came across in late 2021. In the background the sea, in one of the worlds more natural corners.re on the beach', 
+   date : '6th March 2023', 
+   category: 'Landscape', 
+   tags : ['Nature', 'Sea', 'Ocean', 'Travel', 'Faroe Islands']
 };
 const imageThreeList = {
-  qr : "images/image_three/image-3-qr-code.png",
-  original : "images/image_three/oscar-image-3-original.png",
-  ascii : ["images/image_three/ascii/image-3-ascii-1.png", "images/image_three/ascii/image-3-ascii-2.png", "images/image_three/ascii/image-3-ascii-3.png"],
-  cartoon : ["images/image_three/cartoon/image-3-cartoon-1.png", "images/image_three/cartoon/image-3-cartoon-2.png", "images/image_three/cartoon/image-3-cartoon-3.png"],
-  bw : ["images/image_three/black_and_white/image-3-bw-1.png", "images/image_three/black_and_white/image-3-bw-2.png"]
+  qr : "../static/images/image_three/image-3-qr-code.png",
+  original : "../static/images/image_three/oscar-image-3-original.png",
+  ascii : ["../static/images/image_three/ascii/image-3-ascii-1.png", "../static/images/image_three/ascii/image-3-ascii-2.png", "../static/images/image_three/ascii/image-3-ascii-3.png"],
+  cartoon : ["../static/images/image_three/cartoon/image-3-cartoon-1.png", "../static/images/image_three/cartoon/image-3-cartoon-2.png", "../static/images/image_three/cartoon/image-3-cartoon-3.png"],
+  bw : ["../static/images/image_three/black_and_white/image-3-bw-1.png", "../static/images/image_three/black_and_white/image-3-bw-2.png"],
+
+ //Semantic Image Info 
+ title : 'Kolding Lake',
+ desc : 'Kolding Lake behind Kolding Hus, DK, birds floating on the lake with the clear blue skies up above.', 
+ date : '8th March 2023', 
+ category: 'Landscape', 
+ tags : ['Lake', 'Sea', 'Ocean', 'dk', 'Water']
 };
 const imageFourList = {
-  qr : "images/image_four/image-4-qr-code.png",
-  original : "images/image_four/oscar-image-4-original.png",
-  ascii : ["images/image_four/ascii/image-4-ascii-1.png", "images/image_four/ascii/image-4-ascii-2.png", "images/image_four/ascii/image-4-ascii-3.png"],
-  cartoon : ["images/image_four/cartoon/image-4-cartoon-1.png", "images/image_four/cartoon/image-4-cartoon-2.png", "images/image_four/cartoon/image-4-cartoon-3.png"],
-  bw : ["images/image_four/black_and_white/image-4-bw-1.png", "images/image_four/black_and_white/image-4-bw-2.png"]
+  qr : "../static/images/image_four/image-4-qr-code.png",
+  original : "../static/images/image_four/oscar-image-4-original.png",
+  ascii : ["../static/images/image_four/ascii/image-4-ascii-1.png", "../static/images/image_four/ascii/image-4-ascii-2.png", "../static/images/image_four/ascii/image-4-ascii-3.png"],
+  cartoon : ["../static/images/image_four/cartoon/image-4-cartoon-1.png", "../static/images/image_four/cartoon/image-4-cartoon-2.png", "../static/images/image_four/cartoon/image-4-cartoon-3.png"],
+  bw : ["../static/images/image_four/black_and_white/image-4-bw-1.png", "../static/images/image_four/black_and_white/image-4-bw-2.png"],
+
+  //Semantic Image Info 
+  title : 'Beach Sunset',
+  desc : 'The sun setting over bournemouth down across a cliffside path. In the background there is bournemouth pier, and in the foreground the sea. Clear skies with a plain trail goes across the top of the picture. Clear day with great weather.', 
+  date : '7th March 2023', 
+  category: 'Nature', 
+  tags : ['Sunset', 'Sun', 'Evening', 'Beach', 'Ocean']
 };
 
 let selectedCustomGenerator;
@@ -72,13 +100,13 @@ function getImageUrl() {
       bwImageToDisplay = imageFourList["bw"][0];
       break;
   }
-  mainImage.src = mainImageToDisplay;
-  originalImage.src = mainImageToDisplay;
-  customImage.src = mainImageToDisplay;
-  customGenImage.src = mainImageToDisplay;
-  asciiImage.src = asciiImageToDisplay;
-  cartoonImage.src = cartoonImageToDisplay;
-  bwImage.src = bwImageToDisplay;
+  mainImage.src = mainImageToDisplay.replace('images', 'images_tshirts');
+  originalImage.src = mainImageToDisplay.replace('images', 'images_tshirts');
+  customImage.src = mainImageToDisplay.replace('images', 'images_tshirts');
+  customGenImage.src = mainImageToDisplay.replace('images', 'images_tshirts');
+  asciiImage.src = asciiImageToDisplay.replace('images', 'images_tshirts');
+  cartoonImage.src = cartoonImageToDisplay.replace('images', 'images_tshirts');
+  bwImage.src = bwImageToDisplay.replace('images', 'images_tshirts');
   document.getElementById("generated-images-free").hidden = true;
   document.getElementById("generated-images-prem").hidden = true;
   document.getElementById("custom-options").hidden = true;
@@ -142,6 +170,14 @@ function generateNewImage() {
   }
 
   let imageToChange = document.getElementById("custom-generated-image");
+  let imageToChangeTwo = document.getElementById("custom-image");
+  if ((indexToChangeTo == 2 && imageList == "bw") || indexToChangeTo == 3) {
+    indexToChangeTo = 0;
+  } 
+  imageToChange.src = imageDict[imageList][indexToChangeTo];
+  imageToChangeTwo.src = imageDict[imageList][indexToChangeTo];
+  indexToChangeTo += 1;
+  console.log("generated new image");
   
   if (genType == "ascii" || genType == "cartoon" || genType == "bw") {
     if ((indexToChangeTo == 2 && genType == "bw") || indexToChangeTo == 3) {
@@ -197,11 +233,74 @@ function selectGenImage(e) {
   }
 }
 
+//tShirtGenerateButton = document.getElementById('get-t-shirt-button')
+//tShirtGenerateButton.addEventListener('click', sendImageToAPI)
+
 //Function that will be used to call Teemill API and send selected image to t-shirt preview and grab that to send back
 function sendImageToAPI() {
-  //TBD
+
+  imageHighlighed = document.querySelector('.highlighted img');
+
+  let payload = {};
+  payload.url = imageHighlighed.src.replace('images_tshirts', 'images')
+  payload.local = 1
+
+  let xhr = new XMLHttpRequest();
+
+  xhr.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      
+      let response = JSON.parse(this.responseText)
+
+      image_url = response['image']
+      url = response['url']
+
+      console.log(image_url)
+      console.log(url)
+
+      window.open(url, '_blank');
+
+    }
+  }
+
+  xhr.open("POST", "/generate-t-shirt", true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+
+  let sendData = JSON.stringify(payload);
+  xhr.send(sendData);
+
 }
 
+//Function to test Importing
+function testReturn() {
+  return true;
+}
+
+function testReturnNonModule() {
+  return true; 
+}
+
+function returnImageList(num) {
+  switch (num) {
+    case 1: 
+      return imageOneList; 
+      break;
+    case 2: 
+      return imageTwoList; 
+      break;
+    case 3: 
+      return imageThreeList; 
+      break;
+    case 4: 
+      return imageFourList;
+      break; 
+    default: 
+      console.log('Returning image list failed.'); 
+  }
+}
+
+//Have to export every function. 
+export { testReturn, testReturnNonModule, returnImageList };  
 
 
 

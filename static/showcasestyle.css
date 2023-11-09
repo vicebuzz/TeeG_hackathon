@@ -41,7 +41,7 @@ main .top-info .user-info .profile-img {
   width: 40px; 
   height: 40px; 
   /*border: 1px solid red; */
-  background-image: url('./profilepic.jpg'); 
+  background-image: url('../resources/profilepic.jpg'); 
   background-position: center; 
   background-repeat: no-repeat;
   background-size: cover; 
@@ -93,7 +93,7 @@ main .image-section .return-button .img-arrow {
   width: 20px;
   height: 20px; 
   /*border: 1px solid red; */
-  background-image: url('./backbutton.png');
+  background-image: url('../resources/backbutton.png');
   background-position: center;
   background-repeat: no-repeat; 
   background-size: cover; 
@@ -255,4 +255,22 @@ main .image-info-options .tags p {
   margin: 4px; 
   padding: 8px 24px; 
   border-radius: 10px; 
+}
+
+/* Jack added this part - do with it as you will this is just baseline so it formatted for you to see it in action */
+main .generated-image {
+  border: 1px solid black;
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+main .generated-image:hover {
+  cursor: pointer;
+  scale: 1.05;
+}
+
+main .highlighted {
+  background-color: yellow;
 }
