@@ -1,0 +1,38 @@
+/*{
+    border: 1px solid red;
+}*/
+.title-flex{
+    display: flex;
+    direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.trending-title{
+    text-align: center;
+}
+.title{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.flex-images{
+    display: flex;
+    direction: row;
+    justify-content: center;
+    padding: 10px;
+    gap: 50px;
+}
+
+.images{
+    width: 200px;
+    height: auto;
+    border-radius: 15px;
+}
+.recent-title{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    margin-left: 50px;
+}
+.icon{
+    width: 65px;
+    height: auto;
+}
