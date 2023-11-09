@@ -94,6 +94,22 @@ function showHackathonFunctionality() {
   }
 }
 
+//Check if custom option is selected
+const customSelection = document.getElementById("hackathon-functionality");
+customSelection.addEventListener("click", toggleCustomSection);
+
+function toggleCustomSection() {
+  const customSectionToToggle = document.getElementById("custom-options");
+  const highlightedElement = document.querySelectorAll('.highlighted');
+  highlightedElement.forEach((el) => {
+    if (el.id == "generated-custom-image") {
+      customSectionToToggle.hidden = false;
+    } else {
+      customSectionToToggle.hidden = true;
+    }
+  });
+}
+
 //Jack added below
 const originalChoice = document.getElementById("generated-original-image");
 originalChoice.addEventListener("click", highlightImage);
