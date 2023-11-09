@@ -8,7 +8,7 @@ api = TeemilAPI()
 
 @app.route('/')
 def home():
-    return render_template('gen-ai-page.html')
+    return render_template('index.html')
 
 @app.route('/generate-t-shirt', methods = ['POST'])
 def generateTShirt():
