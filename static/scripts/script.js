@@ -94,8 +94,24 @@ function showHackathonFunctionality() {
   }
 }
 
+//Check if custom option is selected
+const customSelection = document.getElementById("hackathon-functionality");
+customSelection.addEventListener("click", toggleCustomSection);
+
+function toggleCustomSection() {
+  const customSectionToToggle = document.getElementById("custom-options");
+  const highlightedElement = document.querySelectorAll('.highlighted');
+  highlightedElement.forEach((el) => {
+    if (el.id == "generated-custom-image") {
+      customSectionToToggle.hidden = false;
+    } else {
+      customSectionToToggle.hidden = true;
+    }
+  });
+}
+
 //Jack added below
-/*const originalChoice = document.getElementById("generated-original-image");
+const originalChoice = document.getElementById("generated-original-image");
 originalChoice.addEventListener("click", highlightImage);
 const asciiChoice = document.getElementById("generated-ascii-image");
 asciiChoice.addEventListener("click", highlightImage)
@@ -104,7 +120,7 @@ cartoonChoice.addEventListener("click", highlightImage)
 const bwChoice = document.getElementById("generated-black-and-white-image");
 bwChoice.addEventListener("click", highlightImage)
 const customChoice = document.getElementById("generated-custom-image");
-customChoice.addEventListener("click", highlightImage)*/
+customChoice.addEventListener("click", highlightImage)
 
 function highlightImage() {
   let pastHighligted = document.querySelectorAll('.highlighted');
