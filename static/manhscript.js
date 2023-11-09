@@ -136,6 +136,7 @@ document.getElementById('generateQRCode').addEventListener('click', function () 
    const imageInput = document.getElementById('imageInput');
    const imageEffects = document.getElementById('imageEffects');
    const applyEffectButton = document.getElementById('applyEffect');
+   const saveImageButton = document.getElementById('saveImage');
    const canvas = document.getElementById('canvas');
    const styledImage = document.getElementById('styledImage');
    const ctx = canvas.getContext('2d');
@@ -178,6 +179,9 @@ document.getElementById('generateQRCode').addEventListener('click', function () 
       URL.revokeObjectURL(link.href);
     }, 'image/png');
    }
+
+
+
    function applyEffect(data, effect) {
      switch (effect) {
        case 'none':
