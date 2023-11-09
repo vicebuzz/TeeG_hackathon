@@ -3,17 +3,37 @@
 }*/
 .title-flex{
     display: flex;
-    direction: row;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+.marketplace-search-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./forest\ backgroud.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 100px;
+}
+.marketplace-search-flex input[type=text]{
+    padding: 6px;
+    width: 500px;
 }
 .trending-title{
     text-align: center;
 }
+h1{
+    color: white;
+}
 .title{
     font-family: Arial, Helvetica, sans-serif;
 }
-
+.desc{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
 .flex-images{
     display: flex;
     direction: row;
