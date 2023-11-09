@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/static/style.css">
+<title>Hackathon</title>
+</head>
+<body>
+  <div class="navigation-bar">
+    <div id="navigation-container">
+        <img src="logo.png"> 
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Get in Touch</a></li>
+        </ul>
+    </div>
+</div>
+<table>
+<tr>
+<th>Image</th>
+<th>Likes</th>
+<th>Comments</th>
+<th>Sales</th>
+<th>Popularity</th>
+<th>Date</th>
+</tr>
+</table>
+<select id="sort">
+<option value="likes">Likes</option>
+<option value="comments">Comments</option>
+<option value="sales">Sales</option>
+<option value="popularity">Popularity</option>
+<option value="date">Date</option>
+</select>
+<select id="dateSort">
+<option value="default">Default</option>
+<option value="week">Week</option>
+<option value="month">Month</option>
+<option value="year">Year</option>
+</select>
+<input type="text" id="linkInput" placeholder="Enter a link">
+<button id="generateQRCode">Generate QR Code</button>
+<input type="color" id="backgroundColorInput" value="#ffffff"> Background Color
+<input type="color" id="foregroundColorInput" value="#000000"> Foreground Color
+<div id="qrcode"></div>
+
+
+<input type="file" id="imageInput" accept="image/*">
+<select id="imageEffects">
+<option value="none">No Effect</option>
+<option value="blackAndWhite">Black & White</option>
+<option value="sepia">Sepia</option>
+<option value="cartoon">Cartoon</option>
+<option value="pixelation">Pixelation</option>
+</select>
+<button id="applyEffect">Apply Selected Effect</button>
+<canvas id="canvas" style="display: none;"></canvas>
+<img id="styledImage" alt="Styled Image">
+
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+<script src="/static/script.js"></script>
+</body>
+</html>
