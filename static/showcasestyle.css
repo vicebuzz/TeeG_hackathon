@@ -41,7 +41,7 @@ main .top-info .user-info .profile-img {
   width: 40px; 
   height: 40px; 
   /*border: 1px solid red; */
-  background-image: url('./profilepic.jpg'); 
+  background-image: url('../resources/profilepic.jpg'); 
   background-position: center; 
   background-repeat: no-repeat;
   background-size: cover; 
@@ -93,7 +93,7 @@ main .image-section .return-button .img-arrow {
   width: 20px;
   height: 20px; 
   /*border: 1px solid red; */
-  background-image: url('./backbutton.png');
+  background-image: url('../resources/backbutton.png');
   background-position: center;
   background-repeat: no-repeat; 
   background-size: cover; 
