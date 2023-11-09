@@ -1,7 +1,3 @@
-//Base file re-created from deletion since it was empty upon my previous merge -- Jack
-
-//Scroll Button Functionality of Image Showcase: 
-
 //Default image (Campfire)
 let imageCount = 1;
 let imageCountMax = 4; //Set to current max number of images
@@ -41,7 +37,6 @@ el = document.getElementById("scroll-right");
 el.addEventListener("click", scrollRightOnClick); 
 
 el = document.getElementById("hackathon-functionality-button");
-console.log(el); 
 el.addEventListener("click", showHackathonFunctionality);
 
 //Click Functions
@@ -58,6 +53,7 @@ function scrollLeftOnClick() {
   setImageURL(imageCount); 
 }
 
+//Scroll Button Functionality of Image Showcase: 
 function scrollRightOnClick() {
   console.log('Click right'); 
   if (imageCount === 1) {
@@ -81,4 +77,24 @@ function showHackathonFunctionality() {
   } else {
     el.hidden = true; 
   }
+}
+
+//Jack added below
+const originalChoice = document.getElementById("generated-original-image");
+originalChoice.addEventListener("click", highlightImage);
+const asciiChoice = document.getElementById("generated-ascii-image");
+asciiChoice.addEventListener("click", highlightImage)
+const cartoonChoice = document.getElementById("generated-cartoon-image");
+cartoonChoice.addEventListener("click", highlightImage)
+const bwChoice = document.getElementById("generated-black-and-white-image");
+bwChoice.addEventListener("click", highlightImage)
+const customChoice = document.getElementById("generated-custom-image");
+customChoice.addEventListener("click", highlightImage)
+
+function highlightImage() {
+  let pastHighligted = document.querySelectorAll('.highlighted');
+  pastHighligted.forEach((el) => {
+    el.classList.remove('highlighted');
+  });
+  this.classList.add("highlighted");
 }

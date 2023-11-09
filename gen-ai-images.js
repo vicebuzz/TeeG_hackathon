@@ -201,9 +201,3 @@ function selectGenImage(e) {
 function sendImageToAPI() {
   //TBD
 }
-
-
-
-
-
-
