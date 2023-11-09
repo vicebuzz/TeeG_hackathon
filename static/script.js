@@ -167,6 +167,16 @@ document.getElementById('generateQRCode').addEventListener('click', function () 
        ctx.putImageData(imageData, 0, 0);
        styledImage.src = canvas.toDataURL('image/jpeg');
      }
+     canvas.toBlob(function (blob) {
+      // Create download link
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'styled_image.png';
+      // Trigger download
+      link.click();
+      // Clean up
+      URL.revokeObjectURL(link.href);
+    }, 'image/png');
    }
    function applyEffect(data, effect) {
      switch (effect) {
@@ -256,3 +266,59 @@ document.getElementById('generateQRCode').addEventListener('click', function () 
    }
  }
 }
+
+
+//
+const apiKey = 'P3sbXrqgozFxB1SwZaFbCYwiKIL7Jy6g8rDcHRUj';
+const apiUrl = 'https://teemill.com/omnis/v3';
+const buyButton = document.getElementById('buy-button');
+const colorPicker = document.getElementById('color-picker');
+const frontCanvas = document.getElementById('front-canvas');
+let color = '#df1aae';
+colorPicker.addEventListener('input', () => {
+ color = colorPicker.value;
+});
+buyButton.addEventListener('click', e => {
+ e.preventDefault();
+ const frontBase64Image = frontCanvas.toDataURL();
+ const options = {
+   method: 'POST',
+   headers: {
+     'Content-Type': 'application/json',
+     Authorization: `Bearer ${apiKey}`,
+   },
+   body: JSON.stringify({
+     image_url: frontBase64Image,
+     item_code: 'RNA1',
+     name: 'Hello World',
+     colours: 'White,Black',
+     description: 'Check out this awesome doodle tee, printed on an organic cotton t-shirt sustainably, using renewable energy. Created via the Teemill API and printed on demand.',
+     price: 20.0,
+   }),
+ };
+ const newTab = window.open('about:blank', '_blank');
+ newTab.document.write(`
+<body
+     style="
+       background-color: #faf9f9;
+       width: 100%;
+       height: 100%;
+       margin: 0;
+       position: relative;
+     "
+>
+<img
+       src="https://storage.googleapis.com/teemill-dev-image-bucket/doodle2tee_loader.gif"
+       style="
+         position: absolute;
+         top: calc(50% - 100px);
+         left: calc(50% - 100px);
+       "
+     />
+</body>
+ `);
+ fetch(`${apiUrl}/product/create`, options)
+   .then(response => response.json())
+   .then(response => (newTab.location.href = response.url))
+   .catch(err => console.error(err));
+});
