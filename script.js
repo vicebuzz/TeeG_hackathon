@@ -1,5 +1,9 @@
 //Base file re-created from deletion since it was empty upon my previous merge -- Jack
 
+//Two types of import
+import {testReturn} from './gen-ai-images.js'; 
+import * as genai from './gen-ai-images.js'; 
+
 //Scroll Button Functionality of Image Showcase: 
 
 //Default image (Campfire)
@@ -8,30 +12,37 @@ let imageCountMax = 4; //Set to current max number of images
 let imageURL = ''; 
 
 function setImageURL(imageCount) {
-  switch (imageCount) {
-    case 1: 
-      imageURL = './images/image_one/oscar-image-1-original.png';
-      break;
-    case 2: 
-      imageURL = './images/image_two/oscar-image-2-original.png';
-      break;
-    case 3: 
-      imageURL = './images/image_three/oscar-image-3-original.png';
-      break;
-    case 4: 
-      imageURL = './images/image_four/oscar-image-4-original.png';
-      break; 
-    default: 
-      imageURL = './images/image_one/oscar-image-1-original.png';
-  }
+  
+  let imageInfo = genai.returnImageList(imageCount);
+  imageURL = imageInfo.original; 
 
   //Set picture URL within html document
   let el = document.getElementById('picture-showcase-main-image'); 
   el.setAttribute('src', imageURL); 
+
+  el = document.getElementById('title'); 
+  el.innerHTML = imageInfo.title; 
+
+  el = document.getElementById('description');
+  el.innerHTML = imageInfo.desc;
+
+  el = document.getElementById('date'); 
+  el.innerHTML = imageInfo.date; 
+
+  el = document.getElementById('category'); 
+  el.innerHTML = imageInfo.category; 
+
+  //set tags
+  for (let i = 0; i < 5; i++) {
+    el = document.getElementById('tag-' + (i+1)); 
+    el.innerHTML = imageInfo.tags[i]; 
+  }
+
+  //console.log(genai.returnImageList(imageCount)); 
 }
 
 setImageURL(imageCount); 
-console.log(imageURL); 
+//console.log(imageURL); 
 
 //Set Event Listeners on Scroll Buttons
 let el = document.getElementById("scroll-left"); 
@@ -41,7 +52,6 @@ el = document.getElementById("scroll-right");
 el.addEventListener("click", scrollRightOnClick); 
 
 el = document.getElementById("hackathon-functionality-button");
-console.log(el); 
 el.addEventListener("click", showHackathonFunctionality);
 
 //Click Functions
