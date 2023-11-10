@@ -107,14 +107,16 @@
         <div id="custom-options" hidden>
           <div class="custom-container">
             <p>CUSTOM SECTION</p>
-            <label id="choose-ai" class="siteTextTwo">Choose AI:</label>
-            <select id="choose-ai-select">
-              <option id="original" value="original" hidden>PLEASE SELECT</option>
-              <option id="ascii" value="ascii">ASCII</option>
-              <option id="cartoon" value="cartoon">CARTOON</option>
-              <option id="black-and-white" value="black-and-white">BLACK & WHITE</option>
-              <option id="custom" value="custom">CUSTOM</option>
-            </select>
+            <div class="select">
+              <label id="choose-ai" class="siteTextTwo">Choose AI:</label>
+              <select id="choose-ai-select">
+                <option id="original" value="original" hidden>PLEASE SELECT</option>
+                <option id="ascii" value="ascii">ASCII</option>
+                <option id="cartoon" value="cartoon">CARTOON</option>
+                <option id="black-and-white" value="black-and-white">BLACK & WHITE</option>
+                <option id="custom" value="custom">CUSTOM</option>
+              </select>
+            </div>
             <div id="custom-text" hidden>
               <br><label class="siteTextTwo">Custom Input:</label>
               <input type="text" id="custom-text-input" placeholder="e.g. 'Add a shark'"></input>
@@ -122,7 +124,10 @@
             <div id="placeholder-image">
               <image src="" height="300" width="400" id="custom-image-regenerated"></image>
             </div>
-            <br><button id="regenButton">Regenerate</button>
+            <br>
+            <div class="button-container">
+              <button id="regenButton">Regenerate</button>
+            </div>
           </div>
         </div>
 
