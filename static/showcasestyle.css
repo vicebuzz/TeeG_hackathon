@@ -270,6 +270,7 @@ main #hackathon-functionality {
   flex-wrap: wrap; 
   justify-content: space-between; 
   align-items: center; 
+  margin-top: 16px; 
 }
 
 main #hackathon-functionality .generated-image {
