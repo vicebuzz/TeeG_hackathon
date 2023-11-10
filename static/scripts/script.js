@@ -96,12 +96,15 @@ function scrollRightOnClick() {
 //Show Hackathon Functionality
 function showHackathonFunctionality() {
   let el = document.getElementById('hackathon-functionality');
+  let buyShirtEl = document.getElementById('buy-shirt-div');
   let customOptionsEl = document.getElementById('custom-options');
 
   if (el.hidden === true) {
     el.hidden = false;
+    buyShirtEl.hidden = false;
   } else {
     el.hidden = true;  
+    buyShirtEl.hidden = true;
     if (customOptionsEl.hidden === false) {
       customOptionsEl.hidden = true;
     }
