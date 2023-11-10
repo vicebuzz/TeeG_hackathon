@@ -12,6 +12,8 @@ let imageCountMax = 4; //Set to current max number of images
 let imageURL = '';
 let imageInfo;
 
+let userType = 'Standard'; 
+
 function setImageURL(imageCount) {
   
   imageInfo = genai.returnImageList(imageCount);
@@ -63,16 +65,6 @@ function setImageURL(imageCount) {
 setImageURL(imageCount); 
 //console.log(imageURL); 
 
-//Set Event Listeners on Scroll Buttons
-let el = document.getElementById("scroll-left"); 
-el.addEventListener("click", scrollLeftOnClick); 
-
-el = document.getElementById("scroll-right"); 
-el.addEventListener("click", scrollRightOnClick); 
-
-el = document.getElementById("hackathon-functionality-button");
-el.addEventListener("click", showHackathonFunctionality);
-
 //Click Functions
 function scrollLeftOnClick() {
   console.log('Click'); 
@@ -104,14 +96,54 @@ function scrollRightOnClick() {
 //Show Hackathon Functionality
 function showHackathonFunctionality() {
   let el = document.getElementById('hackathon-functionality');
-  console.log(el.style.display)
+  let customOptionsEl = document.getElementById('custom-options');
 
   if (el.hidden === true) {
     el.hidden = false;
   } else {
-    el.hidden = true; 
+    el.hidden = true;  
+    if (customOptionsEl.hidden === false) {
+      customOptionsEl.hidden = true;
+    }
   }
 }
+
+//Change user Type: Standard and Premium
+function userTypeOnClick() {
+  let textEl = document.getElementById('user-type-actual'); 
+  let customEl = document.getElementById('generated-custom-image'); 
+  let customOptionsEl = document.getElementById('custom-options');
+
+  if (userType === 'Standard') {
+    //Set user type to premium
+    userType = 'Premium';     
+    textEl.innerHTML = userType; 
+    customEl.hidden = false; 
+  } else if (userType === 'Premium') {
+    //Set user type to standard
+    userType = 'Standard';  
+    textEl.innerHTML = userType; 
+    customEl.hidden = true; 
+    if (customOptionsEl.hidden === false) {
+      customOptionsEl.hidden = true; 
+    }
+  } else {
+    console.log('Error changing user type'); 
+  }
+}
+
+//Set Event Listeners on Scroll Buttons
+let el = document.getElementById("scroll-left"); 
+el.addEventListener("click", scrollLeftOnClick); 
+
+el = document.getElementById("scroll-right"); 
+el.addEventListener("click", scrollRightOnClick); 
+
+el = document.getElementById("hackathon-functionality-button");
+el.addEventListener("click", showHackathonFunctionality);
+
+el = document.getElementById('user-type');
+el.addEventListener("click", userTypeOnClick);
 
 //Check if custom option is selected
 const customSelection = document.getElementById("hackathon-functionality");

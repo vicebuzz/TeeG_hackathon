@@ -53,8 +53,7 @@ main .top-info .user-info .profile-img:hover {
   cursor: pointer;
 }
 
-main .top-info .user-info .username {
-  /*border: 1px solid blue; */ 
+main .top-info .user-info .username { 
   display: flex; 
   margin-left: 10px; 
   align-items: center; 
@@ -68,6 +67,13 @@ main .top-info .user-info .username p:hover {
   cursor: pointer; 
   text-decoration: underline; 
 }
+
+main .top-info .user-info .user-type {
+  margin-left: 12px; 
+}
+
+main .top-info .user-info .user-type:hover {
+  cursor: pointer;}
 
 main .top-info .more-options {
   align-self: flex-end;
@@ -257,13 +263,23 @@ main .image-info-options .tags p {
   border-radius: 10px; 
 }
 
-/* Jack added this part - do with it as you will this is just baseline so it formatted for you to see it in action */
-main .generated-image {
-  border: 1px solid black;
-  display: inline-block;
+
+/*Hackathon Functionality Styling*/
+main #hackathon-functionality {
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+main #hackathon-functionality .generated-image {
+  border: 3px solid indigo;
+  /*display: inline-block;*/
   text-align: center;
   padding: 10px;
   margin-right: 20px;
+  margin-bottom: 20px; 
+  border-radius: 10px; 
 }
 
 main .generated-image:hover {
@@ -272,5 +288,9 @@ main .generated-image:hover {
 }
 
 main .highlighted {
-  background-color: yellow;
+  background-color:  rgb(230, 198, 255);
+}
+
+[hidden]{
+  display:none !important;
 }
