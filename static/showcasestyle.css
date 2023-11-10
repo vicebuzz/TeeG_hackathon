@@ -364,6 +364,14 @@ main #buy-shirt-div button {
 
 main #buy-shirt-div button:hover {
   background-color:rgb(230, 198, 255);
+  cursor: pointer;
+}
+
+main #custom-text {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  margin-top: 20px; 
 }
 
 [hidden]{

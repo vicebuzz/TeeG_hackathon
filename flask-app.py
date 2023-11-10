@@ -8,6 +8,18 @@ api = TeemilAPI()
 
 @app.route('/')
 def home():
+    return render_template('home.html')
+
+@app.route('/home.html')
+def hometwo():
+    return render_template('home.html')
+
+@app.route('/trending.html')
+def trending():
+    return render_template('trending.html')
+
+@app.route('/index.html')
+def index():
     return render_template('index.html')
 
 @app.route('/generate-t-shirt', methods = ['POST'])

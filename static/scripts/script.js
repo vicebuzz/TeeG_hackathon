@@ -201,11 +201,14 @@ let currentRegeneratorIndex = 0;
 function getAIGenerator() {
   let imageToChange = document.getElementById("custom-image-regenerated");
   let secondImageToChange = document.getElementById("custom-image");
+  let customInputBox = document.getElementById("custom-text");
+  customInputBox.hidden = false;
   selectedAI = aiOptions.value;
   if (selectedAI == "black-and-white") {
     selectedAI = "bw";
   }
   if (selectedAI != "custom") {
+    customInputBox.hidden = true;
     imagesToLoop = imageInfo[selectedAI];
     for (let idx in imagesToLoop) {
       imagesToLoop[idx] = imagesToLoop[idx].replace("/images/", "/images_tshirts/");
@@ -214,6 +217,7 @@ function getAIGenerator() {
     secondImageToChange.src = imagesToLoop[0];
   } else {
     console.log("Custom clicked");
+    customInputBox = false;
   }
 }
 
@@ -222,10 +226,10 @@ el = document.getElementById("regenButton");
 el.addEventListener("click", regenerateImage);
 
 function regenerateImage() {
+  currentRegeneratorIndex += 1;
   if (selectedAI != "custom") {
     let imageToChange = document.getElementById("custom-image-regenerated");
     let secondImageToChange = document.getElementById("custom-image");
-    currentRegeneratorIndex += 1;
     if (selectedAI == "bw" && currentRegeneratorIndex == 2 || currentRegeneratorIndex == 3) {
       currentRegeneratorIndex = 0;
     }
