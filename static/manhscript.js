@@ -111,8 +111,14 @@ var pictures=[ {
          });
 
 //qr code generate
+function getCurrentURL () {
+  return window.location.href
+}
+
+const url = getCurrentURL()
+
 document.getElementById('generateQRCode').addEventListener('click', function () {
-    const link = document.getElementById('linkInput').value;
+    const link = url;
     const backgroundColor = document.getElementById('backgroundColorInput').value;
      const foregroundColor = document.getElementById('foregroundColorInput').value;
     if (link) {
@@ -271,58 +277,21 @@ document.getElementById('generateQRCode').addEventListener('click', function () 
  }
 }
 
+function myFunction() {
+  var x = document.getElementById("myGrid");
+  if (x.className === "w3-row") {
+    x.className = "w3-row-padding";
+  } else { 
+    x.className = x.className.replace("w3-row-padding", "w3-row");
+  }
+}
 
-//
-const apiKey = 'P3sbXrqgozFxB1SwZaFbCYwiKIL7Jy6g8rDcHRUj';
-const apiUrl = 'https://teemill.com/omnis/v3';
-const buyButton = document.getElementById('buy-button');
-const colorPicker = document.getElementById('color-picker');
-const frontCanvas = document.getElementById('front-canvas');
-let color = '#df1aae';
-colorPicker.addEventListener('input', () => {
- color = colorPicker.value;
-});
-buyButton.addEventListener('click', e => {
- e.preventDefault();
- const frontBase64Image = frontCanvas.toDataURL();
- const options = {
-   method: 'POST',
-   headers: {
-     'Content-Type': 'application/json',
-     Authorization: `Bearer ${apiKey}`,
-   },
-   body: JSON.stringify({
-     image_url: frontBase64Image,
-     item_code: 'RNA1',
-     name: 'Hello World',
-     colours: 'White,Black',
-     description: 'Check out this awesome doodle tee, printed on an organic cotton t-shirt sustainably, using renewable energy. Created via the Teemill API and printed on demand.',
-     price: 20.0,
-   }),
- };
- const newTab = window.open('about:blank', '_blank');
- newTab.document.write(`
-<body
-     style="
-       background-color: #faf9f9;
-       width: 100%;
-       height: 100%;
-       margin: 0;
-       position: relative;
-     "
->
-<img
-       src="https://storage.googleapis.com/teemill-dev-image-bucket/doodle2tee_loader.gif"
-       style="
-         position: absolute;
-         top: calc(50% - 100px);
-         left: calc(50% - 100px);
-       "
-     />
-</body>
- `);
- fetch(`${apiUrl}/product/create`, options)
-   .then(response => response.json())
-   .then(response => (newTab.location.href = response.url))
-   .catch(err => console.error(err));
-});
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.width = "100%";
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
