@@ -53,6 +53,12 @@ function setImageURL(imageCount) {
   el = document.getElementById('category'); 
   el.innerHTML = imageInfo.category; 
 
+  el = document.getElementById('info-views-actual'); 
+  el.innerHTML = imageInfo.views; 
+
+  el = document.getElementById('info-comments-actual'); 
+  el.innerHTML = imageInfo.comments; 
+
   //set tags
   for (let i = 0; i < 5; i++) {
     el = document.getElementById('tag-' + (i+1)); 

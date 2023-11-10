@@ -11,7 +11,9 @@ const imageOneList = {
   desc : 'Campfire on the beach', 
   date : '6th March 2023', 
   category: 'Nature', 
-  tags : ['Nature', 'Fire', 'Fireplace', 'Beach', 'Flames']
+  tags : ['Nature', 'Fire', 'Fireplace', 'Beach', 'Flames'],
+  views: 82, 
+  comments: 12
 };
 const imageTwoList = {
   qr : "../static/images/image_two/image-2-qr-code.png",
@@ -25,7 +27,9 @@ const imageTwoList = {
    desc : 'Taken on the Faroe Islands, a rock pile that we came across in late 2021. In the background the sea, in one of the worlds more natural corners.re on the beach', 
    date : '6th March 2023', 
    category: 'Landscape', 
-   tags : ['Nature', 'Sea', 'Ocean', 'Travel', 'Faroe Islands']
+   tags : ['Nature', 'Sea', 'Ocean', 'Travel', 'Faroe Islands'],
+   views: 33, 
+   comments: 3
 };
 const imageThreeList = {
   qr : "../static/images/image_three/image-3-qr-code.png",
@@ -39,7 +43,9 @@ const imageThreeList = {
  desc : 'Kolding Lake behind Kolding Hus, DK, birds floating on the lake with the clear blue skies up above.', 
  date : '8th March 2023', 
  category: 'Landscape', 
- tags : ['Lake', 'Sea', 'Ocean', 'dk', 'Water']
+ tags : ['Lake', 'Sea', 'Ocean', 'dk', 'Water'],
+ views: 106, 
+ comments: 20
 };
 const imageFourList = {
   qr : "../static/images/image_four/image-4-qr-code.png",
@@ -53,7 +59,9 @@ const imageFourList = {
   desc : 'The sun setting over bournemouth down across a cliffside path. In the background there is bournemouth pier, and in the foreground the sea. Clear skies with a plain trail goes across the top of the picture. Clear day with great weather.', 
   date : '7th March 2023', 
   category: 'Nature', 
-  tags : ['Sunset', 'Sun', 'Evening', 'Beach', 'Ocean']
+  tags : ['Sunset', 'Sun', 'Evening', 'Beach', 'Ocean'],
+  views: 48, 
+  comments: 6
 };
 
 let selectedCustomGenerator;
