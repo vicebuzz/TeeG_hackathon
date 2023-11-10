@@ -282,13 +282,69 @@ main #hackathon-functionality .generated-image {
   border-radius: 10px; 
 }
 
+main .generated-image {
+  transition: ease 0.2s; 
+}
+
 main .generated-image:hover {
   cursor: pointer;
   scale: 1.05;
+  background-color:rgb(246, 234, 255); 
 }
 
 main .highlighted {
   background-color:  rgb(230, 198, 255);
+}
+
+main #custom-options .custom-container p { 
+  text-align: center; 
+  font-weight: bold; 
+  font-size: 1.2rem; 
+}
+
+main #custom-options .custom-container .select {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+
+main #custom-options .custom-container .select label {
+  margin-right: 10px; 
+}
+
+main #custom-options .custom-container .select select {
+  padding: 10px; 
+  border-radius: 5px; 
+  border: 2px solid indigo;  
+  transition: ease 0.2s background-color; 
+}
+
+main #custom-options .custom-container .select select:hover {
+  background-color:rgb(230, 198, 255); 
+}
+
+main #custom-options .custom-container #placeholder-image {
+  margin-top: 2rem; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+main #custom-options .custom-container .button-container {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+}
+
+main #custom-options .custom-container .button-container button {
+  padding: 10px; 
+  border-radius: 5px; 
+  border: 2px solid indigo; 
+  transition: ease 0.2s background-color;
+}
+
+main #custom-options .custom-container .button-container button:hover {
+  background-color:rgb(230, 198, 255); 
 }
 
 [hidden]{
